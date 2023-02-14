@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Matched People Display Page</title>
+    <style>
+      body {
+        background-color: #fce6ff;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        color: #ff0066;
+        margin-top: 50px;
+        font-size: 36px;
+      }
+      .match-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+        height: 450px;
+        width: 80%;
+        margin: 0 auto;
+      }
+      .match-card img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+      .match-card h3 {
+        margin-top: 20px;
+        color: #ff0066;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .match-card p {
+        color: #666;
+        font-size: 18px;
+        margin: 5px 0;
+        text-align: center;
+      }
+      .chat-button {
+        background-color: #ff0066;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.3s ease-in-out;
+      }
+      .chat-button:hover {
+        background-color: #ff3366;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transform: translateX(-50%) translateY(-5px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Matched People</h1>
+    <div id="matches">
+      <div class="match-card">
+        <img src="https://i.pravatar.cc/200?img=56" alt="Profile Picture">
+        <h3>Yonatan Haile</h3>
+        <p>Age: 30</p>
+        <p>Location: Mexico</p>
+        <p>Interests: Hiking, Traveling, Cooking</p>
+        <button class="chat-button" onclick="window.location.href = 'chat.html';">Chat Now</button>
+      </div>
+      <div class="match-card">
+        <img src="https://i.pravatar.cc/200?img=16" alt="Profile Picture">
+        <h3>Rahel Rich</h3>
+        <p>Age: 28</p>
+        <p>Location: 4kilo</p>
+        <p>Interests: Yoga, Reading, Watching Movies</p>
+        <button class="chat-button" onclick="window.location.href = 'chat.html';">Chat Now</button>
+      </div>
+      <div class="match-card">
+        <img src="https://i.pravatar.cc/200?img=7" alt="Profile Picture">
+        <h3>Gedion Ezra</h3>
+        <p>Age: 29</p>
+        <p>Location: Piassa</p>
+        <p>Interests: Making Music, Dancing, Coffee</p>
+        <button class="chat-button" onclick="window.location.href = 'chat.html';">Chat Now</button>
+      </div>
+      <div class="match-card">
+        <img src="https://i.pravatar.cc/200?img=49" alt="Profile Picture">
+        <h3>Feven Tesfaye</h3>
+        <p>Age: 29</p>
+        <p>Location: Bethel</p>
+        <p>Interests: Listening to Music, Exercising, Smoking</p>
+        <button class="chat-button" onclick="window.location.href = 'chat.html';">Chat Now</button>
+      </div>
+    </div>
+  </body>
+</html>
