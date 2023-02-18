@@ -11,6 +11,7 @@ class LiveChat {
 
     this.genderSocketPairs[gender] = webSocket;
     this._addEventHandlers(gender);
+    this._resetUnreadCount(gender);
   }
 
   _getOtherGender(gender) {
@@ -81,6 +82,20 @@ class LiveChat {
     );
   }
 
+  async _resetUnreadCount(gender) {
+    let updateCommand;
+    if (gender === "male") {
+      updateCommand = { unreadByBoyCount: 0 };
+    } else {
+      updateCommand = { unreadByGirlCount: 0 };
+    }
+
+    const result = await MatchDbModel.findOneAndUpdate(
+      { _id: this.chatId },
+      updateCommand
+    );
+  }
+
   //public
   isOnline(userId) {
     return this.genderSocketPairs[userId] !== undefined;
@@ -99,6 +114,7 @@ class LiveChat {
     }
 
     this._addEventHandlers(gender);
+    this._resetUnreadCount(gender);
   }
 }
 
