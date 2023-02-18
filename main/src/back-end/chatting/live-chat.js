@@ -30,7 +30,7 @@ class LiveChat {
       if (this.isOnline(otherGender)) {
         this._transferMessage(otherGender, message);
       } else {
-        await this._countAsUnread(gender);
+        await this._countAsUnread(otherGender);
       }
     });
 
@@ -54,9 +54,7 @@ class LiveChat {
     const result = await MatchDbModel.findOneAndUpdate(
       { _id: this.chatId },
       {
-        $push: {
-          messages: messageInDocument,
-        },
+        $push: { messages: messageInDocument },
       }
     );
     console.log("saved message to db");
