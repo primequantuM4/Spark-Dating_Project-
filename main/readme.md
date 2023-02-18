@@ -1,1 +1,4 @@
-Do not add styling to the html files in here. They are only used for testing the backend legizew.
+
+  Add styling to the front end
+  html files are in src/front-end/public
+  
