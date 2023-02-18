@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Edit Profile | Fonka</title>
+  </head>
+  <body>
+    <nav>
+      <a href="home.html">home</a>
+
+      <a href="chats.html">chats</a>
+      <a href="edit-profile.html">edit profile</a>
+      <a href="matching.html">matching</a>
+      <a href="logout.html">logout</a>
+    </nav>
+
+    <header>
+      <h1>Fill out profile</h1>
+      <p>
+        One more step before you enjoy Spark!
+        <br />
+        We need this to give you good partner suggestions.
+      </p>
+    </header>
+
+    <form action="/users" method="PUT" id="edit-form">
+      <fieldset>
+        <legend>Account Related</legend>
+        <div>
+          <label>Email <input type="email" name="email" disabled /></label>
+        </div>
+        <div>
+          <label>Password <input type="password" name="password" /></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Basic Info</legend>
+
+        <div>
+          <label
+            >* First Name
+            <input type="text" name="firstName" value="Abebe" disabled
+          /></label>
+        </div>
+
+        <div>
+          <label
+            >* Father Name
+            <input type="text" name="lastName" value="Kebede" disabled
+          /></label>
+        </div>
+
+        <div>
+          <p>* Sex</p>
+
+          <label
+            >Male <input type="radio" name="sex" value="male" disabled
+          /></label>
+
+          <label for="female-input"
+            >Female <input type="radio" name="sex" value="female" disabled
+          /></label>
+        </div>
+
+        <div>
+          * Religion
+
+          <label>
+            <input type="radio" name="religion" value="catholic" />
+            Catholic
+          </label>
+
+          <label>
+            <input type="radio" name="religion" value="judaism" />
+            Judaism
+          </label>
+          <label>
+            <input type="radio" name="religion" value="musliim" />
+            Muslim
+          </label>
+          <label>
+            <input type="radio" name="religion" value="orthodox" />
+            Orthodox
+          </label>
+          <label>
+            <input type="radio" name="religion" value="protestant" />
+            Protestant
+          </label>
+          <label>
+            <input type="radio" name="religion" value="other" />
+            Other
+          </label>
+        </div>
+
+        <div>
+          <label>* Birthday <input type="date" name="birthday" /></label>
+        </div>
+
+        <div>
+          <label
+            >* Bio. Say A few Words About Your Self
+            <input type="text" name="bio"
+          /></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Optional</legend>
+
+        <div>
+          * religiousPreferences
+
+          <label>
+            <input
+              type="checkbox"
+              name="religiousPreferences"
+              value="catholic"
+            />
+            Catholic
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              name="religiousPreferences"
+              value="judaism"
+            />
+            Judaism
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="religiousPreferences"
+              value="musliim"
+            />
+            Muslim
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="religiousPreferences"
+              value="orthodox"
+            />
+            Orthodox
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="religiousPreferences"
+              value="protestant"
+            />
+            Protestant
+          </label>
+          <label>
+            <input type="checkbox" name="religiousPreferences" value="other" />
+            Other
+          </label>
+        </div>
+
+        <div>
+          <label
+            >Your Height (in centimeters) <input type="number" name="height"
+          /></label>
+        </div>
+
+        <div>
+          <p>height range</p>
+
+          <div>
+            <label
+              >Minimum height <input type="number" name="minHeight"
+            /></label>
+          </div>
+
+          <div>
+            <label
+              >Maximum height <input type="number" name="maxHeight"
+            /></label>
+          </div>
+        </div>
+
+        <div>
+          <p>Age Range</p>
+
+          <input type="number" name="minAge" />
+          <label>Minimum Age </label>
+
+          <label
+            >Maximum Age
+            <input type="number" name="maxAge" />
+          </label>
+        </div>
+      </fieldset>
+
+      <input type="submit" value="Save" />
+    </form>
+
+    <div>
+      <button id="delete-account-btn">Delete Account?</button>
+    </div>
+  </body>
+  <script src="./extract-form.js"></script>
+  <script src="./fill-form.js"></script>
+
+  <script>
+    const editForm = document.getElementById("edit-form");
+
+    editForm.onsubmit = async function (event) {
+      event.preventDefault();
+      const sentJson = extractForm(event.target);
+    };
+    async function fetchAndFill() {
+      const url = "/api/profile";
+
+      const response = await fetch(url);
+      console.log(response);
+      const data = await response.json();
+      console.log(data);
+      if (response.ok) {
+        fillForm(data, editForm);
+      }
+    }
+    fetchAndFill();
+  </script>
+  <script>
+    editForm.onsubmit = async function (event) {
+      event.preventDefault();
+      const sentJson = extractForm(event.target);
+
+      const url = "/api/profile";
+
+      const response = await fetch(url, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(sentJson),
+      });
+
+      const data = await response.json();
+      console.log(data);
+    };
+  </script>
+
+  <script>
+    const deleteAccountButton = document.getElementById("delete-account-btn");
+    deleteAccountButton.addEventListener("click", handleDeleteAccount);
+
+    async function handleDeleteAccount() {
+      const NEXT_URL = "home.html";
+      const result = await fetch("/api/", { method: "DELETE" });
+      if (result.ok) {
+        alert("account deleted");
+        window.location = NEXT_URL;
+      } else {
+        alert("account not deleted");
+      }
+    }
+  </script>
+</html>

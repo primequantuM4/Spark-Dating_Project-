@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+  </head>
+  <body>
+    <nav>
+      <a href="home.html">home</a>
+
+      <a href="home.html">home</a>
+      <a href="sign-up.html">signup</a>
+      <a href="login.html">login</a>
+      <a href="logout.html">logout</a>
+    </nav>
+
+    <h1>login</h1>
+    <form id="login-form">
+      <label>
+        email
+        <input type="text" name="email" value="abebe@gmail.com" required />
+      </label>
+      <br />
+
+      <label>
+        password
+        <input type="password" name="password" value="abebe" type="password" />
+      </label>
+
+      <br />
+      <input type="submit" />
+    </form>
+
+    <script src="/extract-form.js"></script>
+    <script>
+      const NEXT_URL = "/matching.html";
+      const loginForm = document.querySelector("#login-form");
+      loginForm.onsubmit = async function (event) {
+        event.preventDefault();
+
+        const apiUrl = "/api/users/logged-in";
+        const sentObject = extractForm(event.target);
+        const options = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(sentObject),
+        };
+
+        const result = await fetch(apiUrl, options);
+        if (result.ok) {
+          const data = await result.json();
+          console.log(data);
+          window.location = NEXT_URL;
+        } else {
+          console.log("error", result);
+        }
+      };
+    </script>
+  </body>
+</html>
