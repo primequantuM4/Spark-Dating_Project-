@@ -1,17 +1,11 @@
-const { AgeFromDateString, AgeFromDate } = require("age-calculator");
+const { AgeFromDateString } = require("age-calculator");
 
 class User {
   constructor(userDocument) {
-    this.document = userDocument;
     this.setProperties(userDocument);
   }
 
   errorIfInvalidRange(range, properyName) {
-    if (range === undefined || range === null) return;
-    if (range.length !== 2) {
-      throw new Error(`bad ${properyName} range length-> ${range}`);
-    }
-
     if (range[0] > range[1]) {
       throw new Error(`bad ${properyName} range order-> ${range}`);
     }
@@ -45,18 +39,18 @@ class User {
         : "/profile-photos/woman.jpeg";
 
     //optionals
-    this.errorIfInvalidRange(userDocument.ageRange, "age range");
 
     if (userDocument.minAge && userDocument.maxAge) {
       this.ageRange = [userDocument.minAge, userDocument.maxAge];
+      this.errorIfInvalidRange(this.ageRange, "age range");
     }
 
-    this.religousPreferences = userDocument.religousPreferences;
+    this.religiousPreferences = userDocument.religiousPreferences;
 
     this.height = userDocument.height;
-    this.errorIfInvalidRange(userDocument.heightRange, "height range");
     if (userDocument.minHeight && userDocument.maxHeight) {
       this.heightRange = [userDocument.minHeight, userDocument.maxHeight];
+      this.errorIfInvalidRange(this.heightRange, "height range");
     }
   }
 
@@ -101,10 +95,10 @@ class User {
     const religion = this.religion;
     const otherReligion = otherUser.religion;
 
-    const religousPreferences = this.religousPreferences;
-    if (!religousPreferences) {
+    const religiousPreferences = this.religiousPreferences;
+    if (!religiousPreferences) {
       return religion === otherReligion ? 10 : -1;
-    } else if (religousPreferences.includes(otherReligion)) {
+    } else if (religiousPreferences.includes(otherReligion)) {
       return 10;
     } else {
       return -1;
@@ -143,7 +137,7 @@ function test() {
     minHeight: 130,
     maxHeight: 170,
     religion: "a",
-    religousPreferences: ["a", "b", "c"],
+    religiousPreferences: ["a", "b", "c"],
   };
 
   const kebede = {
@@ -172,7 +166,7 @@ function test() {
     minHeight: 130,
     maxHeight: 170,
     religion: "a",
-    religousPreferences: ["a", "b"],
+    religiousPreferences: ["a", "b"],
   };
 
   const ayelech = {
@@ -265,4 +259,4 @@ async function test3() {
   console.log(girlUser.getPublicInfo());
   //console.log(boyUser.score(girlUser))
 }
-test3();
+//test3();
