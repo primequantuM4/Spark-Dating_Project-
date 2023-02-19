@@ -16,22 +16,22 @@
     </nav>
 
     <header>
-      <h1>Fill out profile</h1>
-      <p>
-        One more step before you enjoy Spark!
-        <br />
-        We need this to give you good partner suggestions.
-      </p>
+      <h1>Edit ur profile</h1>
     </header>
 
-    <form action="/users" method="PUT" id="edit-form">
+    <img src="" alt="profile picture" id="profile-picture" />
+    <form id="edit-form">
       <fieldset>
         <legend>Account Related</legend>
         <div>
-          <label>Email <input type="email" name="email" disabled /></label>
+          <label
+            >Email <input type="email" name="email" required disabled
+          /></label>
         </div>
         <div>
-          <label>Password <input type="password" name="password" /></label>
+          <label
+            >Password <input type="password" name="password" required
+          /></label>
         </div>
       </fieldset>
 
@@ -41,14 +41,14 @@
         <div>
           <label
             >* First Name
-            <input type="text" name="firstName" value="Abebe" disabled
+            <input type="text" name="firstName" value="Abebe" required disabled
           /></label>
         </div>
 
         <div>
           <label
             >* Father Name
-            <input type="text" name="lastName" value="Kebede" disabled
+            <input type="text" name="lastName" value="Kebede" required disabled
           /></label>
         </div>
 
@@ -56,11 +56,19 @@
           <p>* Sex</p>
 
           <label
-            >Male <input type="radio" name="sex" value="male" disabled
+            >Male
+            <input
+              type="radio"
+              name="sex"
+              value="male"
+              checked
+              required
+              disabled
           /></label>
 
-          <label for="female-input"
-            >Female <input type="radio" name="sex" value="female" disabled
+          <label
+            >Female
+            <input type="radio" name="sex" value="female" required disabled
           /></label>
         </div>
 
@@ -68,41 +76,65 @@
           * Religion
 
           <label>
-            <input type="radio" name="religion" value="catholic" />
+            <input
+              type="radio"
+              name="religion"
+              value="catholic"
+              required
+              checked
+            />
             Catholic
           </label>
 
           <label>
-            <input type="radio" name="religion" value="judaism" />
+            <input type="radio" name="religion" value="judaism" required />
             Judaism
           </label>
           <label>
-            <input type="radio" name="religion" value="musliim" />
+            <input type="radio" name="religion" value="muslim" required />
             Muslim
           </label>
           <label>
-            <input type="radio" name="religion" value="orthodox" />
+            <input type="radio" name="religion" value="orthodox" required />
             Orthodox
           </label>
           <label>
-            <input type="radio" name="religion" value="protestant" />
+            <input type="radio" name="religion" value="protestant" required />
             Protestant
           </label>
           <label>
-            <input type="radio" name="religion" value="other" />
+            <input type="radio" name="religion" value="other" required />
             Other
           </label>
         </div>
 
         <div>
-          <label>* Birthday <input type="date" name="birthday" /></label>
+          <label
+            >* Birthday
+            <input type="date" name="birthday" value="2000-01-01" required
+          /></label>
         </div>
 
         <div>
           <label
             >* Bio. Say A few Words About Your Self
-            <input type="text" name="bio"
+            <input
+              type="text"
+              name="bio"
+              value="The fault in our dreams"
+              required
           /></label>
+        </div>
+
+        <div>
+          <label
+            >Profile Picture
+            <input
+              type="file"
+              name="profilePicture"
+              accept="image/png, image/jpeg"
+            />
+          </label>
         </div>
       </fieldset>
 
@@ -110,7 +142,7 @@
         <legend>Optional</legend>
 
         <div>
-          * religiousPreferences
+          religiousPreferences
 
           <label>
             <input
@@ -192,25 +224,164 @@
             <input type="number" name="maxAge" />
           </label>
         </div>
-      </fieldset>
 
-      <input type="submit" value="Save" />
+        <div>
+          <p>Hobbies</p>
+          <label>
+            <input type="checkbox" name="hobbies" value="movies" />
+            Movies
+          </label>
+
+          <label>
+            <input type="checkbox" name="hobbies" value="picnic-at-mars" />
+            picnic-at-mars
+          </label>
+          <label>
+            <input type="checkbox" name="hobbies" value="the-office" />
+            the-office
+          </label>
+          <label>
+            <input type="checkbox" name="hobbies" value="jamaica" />
+            jamaica
+          </label>
+          <label>
+            <input type="checkbox" name="hobbies" value="chicken-cheese" />
+            chicken-cheese
+          </label>
+          <label>
+            <input type="checkbox" name="hobbies" value="counting-stars" />
+            counting-stars
+          </label>
+        </div>
+        <div>
+          <p>Your Education Level</p>
+
+          <label>
+            <input type="radio" name="educationLevel" value="10" required />
+            MiddleSchool
+          </label>
+
+          <label>
+            <input type="radio" name="educationLevel" value="20" required />
+            HighSchool
+          </label>
+          <label>
+            <input type="radio" name="educationLevel" value="30" required />
+            University/College
+          </label>
+          <label>
+            <input type="radio" name="educationLevel" value="40" required />
+            Masters
+          </label>
+          <label>
+            <input type="radio" name="educationLevel" value="50" required />
+            Professor
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="educationLevel"
+              value=""
+              required
+              checked
+            />
+            None
+          </label>
+        </div>
+        <div>
+          <p>My partner should not be educated below..</p>
+
+          <label>
+            <input
+              type="radio"
+              name="preferredEducationLevel"
+              value="10"
+              required
+            />
+            MiddleSchool
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="preferredEducationLevel"
+              value="20"
+              required
+            />
+            HighSchool
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="preferredEducationLevel"
+              value="30"
+              required
+            />
+            University/College
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="preferredEducationLevel"
+              value="40"
+              required
+            />
+            Masters
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="preferredEducationLevel"
+              value="50"
+              required
+            />
+            Professor
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="preferredEducationLevel"
+              value=""
+              required
+              checked
+            />
+            I don't mind
+          </label>
+        </div>
+
+        <div>
+          <p>Location</p>
+          <label>
+            Save My Location
+            <input type="checkbox" name="" id="allow-location-check-box" />
+          </label>
+
+          <label>
+            Good if partner is within
+            <input type="number" name="kmRadius" />
+            kms
+          </label>
+        </div>
+      </fieldset>
+      <button>SAVE</button>
     </form>
 
     <div>
       <button id="delete-account-btn">Delete Account?</button>
     </div>
   </body>
-  <script src="./extract-form.js"></script>
   <script src="./fill-form.js"></script>
+  <script src="./save-location-if-possible.js"></script>
 
   <script>
     const editForm = document.getElementById("edit-form");
+    const profilePicture = document.getElementById("profile-picture");
+    const NEXT_URL = "/login.html"; //EDIT THIS IF CHANGED
+    const allowLocationCheckBox = document.getElementById(
+      "allow-location-check-box"
+    );
 
-    editForm.onsubmit = async function (event) {
-      event.preventDefault();
-      const sentJson = extractForm(event.target);
-    };
+    fetchAndFill();
     async function fetchAndFill() {
       const url = "/api/profile";
 
@@ -220,24 +391,21 @@
       console.log(data);
       if (response.ok) {
         fillForm(data, editForm);
+        profilePicture.setAttribute("src", data.photoUrl);
       }
     }
-    fetchAndFill();
-  </script>
-  <script>
+
     editForm.onsubmit = async function (event) {
       event.preventDefault();
-      const sentJson = extractForm(event.target);
+      const formData = new FormData(editForm);
+      await saveLocationIfPossible(formData, allowLocationCheckBox);
 
-      const url = "/api/profile";
-
-      const response = await fetch(url, {
+      console.log(...formData);
+      const result = await fetch("/api/profile", {
         method: "PUT",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(sentJson),
+        body: formData,
       });
-
-      const data = await response.json();
+      const data = await result.json();
       console.log(data);
     };
   </script>

@@ -5,15 +5,21 @@ const { MatchDbModel } = require("../models/match-db-model");
 const { LikeDbModel } = require("../models/like-db-model");
 const { DislikeDbModel } = require("../models/dislike-db-model");
 
+const { formatProfile } = require("./format-profile");
+
 class UserInfoHandler {
   signup() {
     //dummy for now
   }
+
   async fillProfile(newProfile) {
-    console.log(newProfile);
+    formatProfile(newProfile);
+    console.log("before", newProfile);
     const newUserDocument = new UserDbModel(newProfile);
     try {
       const result = await newUserDocument.save();
+      console.log("after", newProfile);
+
       suggester.updateUsers();
       return result;
     } catch (error) {
@@ -31,28 +37,15 @@ class UserInfoHandler {
     return userDocument;
   }
 
-  async savePhoto() {
-    //save photo to photos folder
-  }
-
   async editProfile(profile, userId) {
-    const savedPart = {
-      password: profile.password,
-
-      religion: profile.religion,
-      birthday: profile.birthday,
-      bio: profile.bio,
-
-      minAge: profile.minAge,
-      maxAge: profile.maxAge,
-      minHeight: profile.minHeight,
-      maxHeight: profile.maxHeight,
-      height: profile.height,
-      religiousPreferences: profile.religiousPreferences,
-    };
+    //unchangable parts
+    delete profile.sex;
+    delete profile.email;
+    delete profile.firstName;
+    delete profile.lastName;
 
     //TODO: suggester.updateScores()
-    const result = await UserDbModel.updateOne({ _id: userId }, savedPart);
+    const result = await UserDbModel.updateOne({ _id: userId }, profile);
     return result;
   }
 

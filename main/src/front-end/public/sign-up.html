@@ -20,7 +20,7 @@
       </p>
     </header>
 
-    <form action="/users" method="PUT" id="edit-form">
+    <form id="edit-form">
       <fieldset>
         <legend>Account Related</legend>
         <div>
@@ -70,7 +70,13 @@
           * Religion
 
           <label>
-            <input type="radio" name="religion" value="catholic" required />
+            <input
+              type="radio"
+              name="religion"
+              value="catholic"
+              required
+              checked
+            />
             Catholic
           </label>
 
@@ -339,37 +345,47 @@
         </div>
 
         <div>
-          <input type="text" />
+          <p>Location</p>
+          <label>
+            Save My Location
+            <input type="checkbox" name="" id="allow-location-check-box" />
+          </label>
+
+          <label>
+            Good if partner is within
+            <input type="number" name="kmRadius" />
+            kms
+          </label>
         </div>
       </fieldset>
-
-      <input type="submit" value="Signup" />
+      <button>SIGN UP!</button>
     </form>
   </body>
-  <script src="./extract-form.js"></script>
+
+  <script src="/save-location-if-possible.js"></script>
 
   <script>
     const editForm = document.getElementById("edit-form");
     const NEXT_URL = "/login.html"; //EDIT THIS IF CHANGED
+    const allowLocationCheckBox = document.getElementById(
+      "allow-location-check-box"
+    );
 
     editForm.onsubmit = async function (event) {
       event.preventDefault();
-      const sentJson = extractForm(event.target);
+      const formData = new FormData(editForm);
+      await saveLocationIfPossible(formData, allowLocationCheckBox);
 
-      const url = "/api/users";
-
-      const response = await fetch(url, {
+      console.log(...formData);
+      const result = await fetch("/api/users", {
         method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(sentJson),
+        body: formData,
       });
-      const data = await response.json();
-      if (data.error && data.code === 11000) {
-        alert(data.error);
-        return;
+      const data = await result.json();
+      if (data.code === 11000) {
+        alert("email already used");
       }
       console.log(data);
-      window.location = NEXT_URL;
     };
   </script>
 </html>

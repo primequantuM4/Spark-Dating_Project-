@@ -1,14 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const { logGuard } = require("../common/log-guard");
+
 const { userInfoHandler } = require("./user-info-handler");
 const { logHandler } = require("./log-handler");
+const { profilePictureMulter } = require("./profile-picture-multer");
 
 router.use(express.json());
 
+const path = require("path");
+const PROFILE_PICTURE_PATH = "/profile-pictures";
+
 //almost signup
-router.post("/users", async (req, res) => {
-  const result = await userInfoHandler.fillProfile(req.body);
+router.post("/users", profilePictureMulter, async (req, res) => {
+  const photoUrl = path.join(PROFILE_PICTURE_PATH, req?.file?.filename ?? "");
+  const profile = req.body;
+  profile.photoUrl = photoUrl;
+  const result = await userInfoHandler.fillProfile(profile);
   res.json(result);
 });
 
@@ -21,9 +29,16 @@ router.get("/profile", logGuard, async (req, res) => {
 });
 
 //edit profile
-router.put("/profile", logGuard, async (req, res) => {
+router.put("/profile", logGuard, profilePictureMulter, async (req, res) => {
   const userId = req.session.userId;
-  const result = await userInfoHandler.editProfile(req.body, userId);
+  const imageName = req?.file?.filename;
+
+  const profile = req.body;
+  if (imageName) {
+    const photoUrl = path.join(PROFILE_PICTURE_PATH, imageName);
+    profile.photoUrl = photoUrl;
+  }
+  const result = await userInfoHandler.editProfile(profile, userId);
   res.json(result);
 });
 

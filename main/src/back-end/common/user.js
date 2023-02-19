@@ -12,8 +12,8 @@ class User {
   }
 
   getPublicInfo() {
-    const { id, firstName, lastName, age, sex, religion, bio, imageUrl } = this;
-    return { id, firstName, lastName, age, sex, religion, bio, imageUrl };
+    const { id, firstName, lastName, age, sex, religion, bio, photoUrl } = this;
+    return { id, firstName, lastName, age, sex, religion, bio, photoUrl };
   }
 
   setProperties(userDocument) {
@@ -30,13 +30,13 @@ class User {
     this.age = age;
 
     this.bio = userDocument.bio;
-    this.imageUrl = userDocument.imageUrl;
+    this.photoUrl = userDocument.photoUrl;
 
     //TODO delete this
-    this.imageUrl =
-      this.sex === "male"
-        ? "/profile-photos/man.jpeg"
-        : "/profile-photos/woman.jpeg";
+    // this.photoUrl =
+    //   this.sex === "male"
+    //     ? "/profile-pictures/man.jpeg"
+    //     : "/profile-pictures/woman.jpeg";
 
     //optionals
 

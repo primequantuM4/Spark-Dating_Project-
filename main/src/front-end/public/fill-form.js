@@ -17,7 +17,7 @@ function fillForm(data, toBeFilledForm) {
     if (!value) continue;
 
     const isArray = Array.isArray(value);
-    if (isArray) {
+    if (isArray && value.length) {
       const innerValues = value;
       for (const innerValue of innerValues) {
         const element = get(name, innerValue);
