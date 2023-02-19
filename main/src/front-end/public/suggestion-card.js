@@ -68,6 +68,7 @@ async function updateDisplay() {
 
 async function setNewSuggestions() {
   const result = await fetch("/api/suggestions");
+  console.log("searching for suggestions");
   if (!result.ok) {
     console.log(result);
     if (result.status === 401) {

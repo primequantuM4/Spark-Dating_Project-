@@ -106,7 +106,7 @@ class User {
   }
 
   score(otherUser) {
-    const religionScore = this.evaluateReligion(otherUser);
+    const religionScore = 10; //this.evaluateReligion(otherUser);
     if (religionScore < 0) return -1;
 
     const ageScore = this.scoreAge(otherUser);
