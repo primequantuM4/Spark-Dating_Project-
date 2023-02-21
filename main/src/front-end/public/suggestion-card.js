@@ -50,6 +50,8 @@ async function handleHate() {
 
 async function updateDisplay() {
   if (current === users.length) {
+    userContainer.innerHTML = "<p>Loading...</p>";
+
     await setNewSuggestions();
     if (users.length === 0) {
       userContainer.innerHTML = "<p>Its like a desert in here...</p>";

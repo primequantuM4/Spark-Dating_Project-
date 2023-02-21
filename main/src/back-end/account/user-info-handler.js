@@ -37,15 +37,17 @@ class UserInfoHandler {
     return userDocument;
   }
 
-  async editProfile(profile, userId) {
+  async editProfile(editedProfile, userId) {
     //unchangable parts
-    delete profile.sex;
-    delete profile.email;
-    delete profile.firstName;
-    delete profile.lastName;
+    delete editedProfile.sex;
+    delete editedProfile.email;
+    delete editedProfile.firstName;
+    delete editedProfile.lastName;
 
-    //TODO: suggester.updateScores()
-    const result = await UserDbModel.updateOne({ _id: userId }, profile);
+    formatProfile(editedProfile);
+
+    suggester.updateScores();
+    const result = await UserDbModel.updateOne({ _id: userId }, editedProfile);
     return result;
   }
 

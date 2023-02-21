@@ -18,8 +18,8 @@ class Suggester {
     this.graph; //dummy for now
   }
 
-  updateScores() {
-    //dummy for now
+  async updateScores() {
+    await this.updateUsers();
   }
 
   async updateUsers() {
@@ -54,6 +54,7 @@ class Suggester {
       const haveDisliked = await this.haveDisliked(user.id, otherUser.id);
       const haveMatched = await this.haveMatched(user.id, otherUser.id);
 
+      console.log(haveDisliked, hasLiked, haveMatched);
       let score;
       if (
         otherScore < 0 ||
@@ -70,6 +71,10 @@ class Suggester {
       const scoreUserPair = { score: score, user: otherUser };
       scoreUserPairs.push(scoreUserPair);
     }
+
+    //   scoreUserPairs.forEach((pair) =>
+    //   console.log(pair.user.firstName, pair.score)
+    // );
 
     const suggestedUsers = scoreUserPairs
       .filter((scoreUserPair) => scoreUserPair.score >= 0)

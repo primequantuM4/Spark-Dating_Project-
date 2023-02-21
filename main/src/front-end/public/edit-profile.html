@@ -406,6 +406,12 @@
         body: formData,
       });
       const data = await result.json();
+
+      if (result.ok) {
+        window.location.reload();
+      } else {
+        alert("we have met a problem");
+      }
       console.log(data);
     };
   </script>

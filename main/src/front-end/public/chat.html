@@ -104,7 +104,7 @@
         const { user, messages } = data;
         console.log(user, messages);
         nameSlot.textContent = user.firstName + " " + user.lastName;
-        profilePicImg.setAttribute("src", user.imageUrl);
+        profilePicImg.setAttribute("src", user.photoUrl);
 
         for (const message of messages) {
           const amBoy = user.sex === "female";

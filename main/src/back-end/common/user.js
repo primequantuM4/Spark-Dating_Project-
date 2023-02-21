@@ -126,6 +126,9 @@ class User {
     let score;
 
     if (!religiousPreferences) {
+      console.log(
+        `${this.firstName}s religion=${religion}  ${otherUser.firstName}s religion=${otherReligion}`
+      );
       score = religion === otherReligion ? 10 : -1;
     } else if (religiousPreferences.includes(otherReligion)) {
       score = 10;
@@ -243,15 +246,16 @@ class User {
         ${this.firstName} score ${otherUser.firstName} is -1.
         look at ${scores}
         `);
+        return -1;
       }
     }
 
     const summer = (cumulativeScore, score) => cumulativeScore + score;
 
     const score = scores.reduce(summer, 0);
-    console.log(`
+    console.log(`---------------------------
         ${this.firstName} score ${otherUser.firstName} is ${score}
-        `);
+        ------------------------`);
     return score;
   }
 }
@@ -480,7 +484,7 @@ function perfectMatchTest() {
 
 //perfectMatchTest();
 
-function miminalistMatchesTest1() {
+function miminalistMatchesTest() {
   const boy = {
     _id: "63f46af3a801243bfd93b4c9",
     email: "man1@gmail.com",
@@ -524,7 +528,7 @@ function miminalistMatchesTest1() {
   boyUser.score(girlUser);
 }
 
-// miminalistMatchesTest();
+miminalistMatchesTest();
 
 function minimalWithMaximalTest() {
   const boy = {

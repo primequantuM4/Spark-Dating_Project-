@@ -48,13 +48,13 @@
       }
 
       fillInnerHtml(user, chatInfo) {
-        const { firstName, lastName, imageUrl } = user;
+        const { firstName, lastName, photoUrl } = user;
         const { unreadCount, chatId } = chatInfo;
 
         this.div.innerHTML = `
             <div>
                 <h3>${firstName} + ${lastName}</h3>
-                <img src="${imageUrl}"/>
+                <img src="${photoUrl}"/>
                 <p>Unread ${unreadCount}</p>
                 <a href="chats/${chatId}"> chat now</a>
             </div>
