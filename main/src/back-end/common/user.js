@@ -32,12 +32,6 @@ class User {
     this.bio = userDocument.bio;
     this.photoUrl = userDocument.photoUrl;
 
-    //TODO delete this
-    // this.photoUrl =
-    //   this.sex === "male"
-    //     ? "/profile-pictures/man.jpeg"
-    //     : "/profile-pictures/woman.jpeg";
-
     //optionals
 
     if (userDocument.minAge && userDocument.maxAge) {
