@@ -5,6 +5,10 @@ const joinPath = require("path").join;
 const public = joinPath(__dirname, "public"); //truly dono why not ./public
 router.use(express.static(public));
 
+router.get("/", (req, res) => {
+  const homeHtmlPath = joinPath(public, "home.html");
+  res.sendFile(homeHtmlPath);
+});
 router.get("/test-hi", (r, res) => res.send("hi"));
 router.get("/chats/:chatId", (req, res) => {
   const chatHtmlPath = joinPath(public, "chat.html");

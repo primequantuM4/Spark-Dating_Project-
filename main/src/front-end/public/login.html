@@ -24,22 +24,28 @@
 
       <label>
         password
-        <input type="password" name="password" value="abebe" type="password" />
+        <input type="password" name="password" value="abebe" />
       </label>
 
       <br />
       <input type="submit" />
     </form>
 
-    <script src="/extract-form.js"></script>
     <script>
       const NEXT_URL = "/matching.html";
       const loginForm = document.querySelector("#login-form");
       loginForm.onsubmit = async function (event) {
         event.preventDefault();
 
+        const sentObject = {};
+        const formData = new FormData(loginForm);
+
+        for (const key of formData.keys()) {
+          const value = formData.get(key);
+          sentObject[key] = value;
+        }
+
         const apiUrl = "/api/users/logged-in";
-        const sentObject = extractForm(event.target);
         const options = {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -47,11 +53,12 @@
         };
 
         const result = await fetch(apiUrl, options);
+        const data = await result.json();
         if (result.ok) {
-          const data = await result.json();
           console.log(data);
           window.location = NEXT_URL;
         } else {
+          alert(`${data.error}`);
           console.log("error", result);
         }
       };

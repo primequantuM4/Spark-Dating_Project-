@@ -73,6 +73,7 @@ class Suggester {
 
     const suggestedUsers = scoreUserPairs
       .filter((scoreUserPair) => scoreUserPair.score >= 0)
+      .sort((sup1, sup2) => sup1.score - sup2.score)
       .map((scoreUserPair) => {
         const user = scoreUserPair.user;
         return user.getPublicInfo();

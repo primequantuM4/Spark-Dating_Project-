@@ -44,15 +44,14 @@ router.put("/profile", logGuard, profilePictureMulter, async (req, res) => {
 
 //login
 router.post("/users/logged-in", async (req, res) => {
+  console.log("login attempt");
   const { email, password } = req.body;
   const result = await logHandler.logIn(email, password, req.session);
 
-  if (result) {
-    res.json(result);
+  if (result.error) {
+    res.status(401).json(result);
   } else {
-    res
-      .status(401)
-      .json({ error: `try again, ${email} with ${password} are incorrect` });
+    res.json(result);
   }
 });
 

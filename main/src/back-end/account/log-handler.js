@@ -7,7 +7,7 @@ class LogHandler {
       session.userId = userDocument._id;
       return userDocument;
     } else {
-      return null;
+      return { error: `email ${email} and password ${password} dont match!` };
     }
   }
 
