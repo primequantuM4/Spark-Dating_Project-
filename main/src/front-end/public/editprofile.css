@@ -1,0 +1,233 @@
+body{
+    overflow-x: hidden;
+    background-color: #141432df;
+    /*background-color: rgb(188, 238, 188);*/
+    margin:0px;
+    padding: 0px;
+    color:white;
+    margin: auto;
+}
+nav{
+    background-color: black;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    height: 10vh;
+}
+nav a{
+    font-size: larger;
+    color: #ddd;
+    text-decoration: none;
+    padding:10px;
+}
+header{
+    font-size: larger;
+}
+h1{
+    margin: 15px;
+}
+h3{
+    font-family: cursive;
+}
+label{
+    font-weight: 800;
+}
+legend{
+    text-decoration:underline;
+    font-weight: 800;
+    font-size: larger;
+    color:blueviolet;
+}
+p{
+    font-size: large;
+    font-weight: bold;
+    background: gray;
+    width: fit-content;
+    padding:10px;
+    border-radius: 10px;
+}
+.account-related{
+    margin:10px;
+    padding:10px;
+    border:0px;
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.partner{
+    display: flex;
+    /*width: 70%;*/
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:15px;
+}
+.partner input{
+    width:50px;
+}
+
+.basic-info{
+    /*width:70%;*/
+    padding:10px;
+    border:0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;  
+}
+.basic-info div , .partner div{
+    margin-bottom: 30px;
+}
+.upload-photo{
+    width: 200px;
+    min-height: 40vh;
+    border:solid 3px;
+    border-radius: 30px;
+    display:grid;
+    justify-items: center;
+    align-items: center;
+}
+.upload-photo input{
+    display: none;
+}
+.optional{
+    border:0px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;   
+}
+.radio label{
+    display: block;
+    padding-left:40px;
+    padding-top:15px;
+    padding-bottom:15px;
+    background-color: #1d1d42;
+    border:2px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    position:relative;
+    cursor: pointer;
+    font-size: medium;
+    width:250px;
+    white-space: nowrap;
+}
+.radio label input[type=radio]{
+    display: none;
+}
+.optional input[type=radio]{
+    display: none;
+}
+
+
+.radio span{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    border: solid 1px #524eee;
+    left:10px;
+    top:10px;
+    display: block;
+}
+.radio span:after{
+    content: " ";
+    background:#524eee;
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%) scale(0);
+    border-radius: 50%;
+    transition: 300ms ease-in-out 0s;
+}
+.radio input[type=radio]:checked~span:after{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.container{
+    width:100px;
+    height: 70px;
+    display:flex;
+    flex-direction: column;
+    color:black;
+    background-color:antiquewhite;
+    align-items: center;
+    justify-content: center;
+    border:2px solid #ddd;
+    box-shadow:5px 15px 20px 4px rgba(0,0,0,0.4);
+    margin:20px;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+    overflow: hidden;
+    
+}
+.religiousPreference label{
+    display:block;
+    background-color: #524eee;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Hobbies label:before{
+    content:'';
+    background-color: antiquewhite;
+}
+.Hobbies .container:hover{
+    background-color:gray;
+}
+.Hobbies label input[type="checkbox"]:checked~.container{
+    border:blueviolet 5px solid;
+    color:blueviolet;
+    font-weight: bold;
+}
+.Hobbies input[type="checkbox"]{
+    display:none;
+}
+.Hobbies iconify-icon{
+    font-size: 25px;
+}
+.list{
+    display:flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    box-shadow: 0px 4px 5px 6px rgba(0,0,0,0.2);
+}
+.btn{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding:10px;
+    font-size: 20px;
+}
+.btn:hover{
+    font-size: 25px;
+}
+#delete-account-btn{
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    padding:10px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+#delete-account-btn:hover{
+    background-color: black;
+    color: red;
+}
+.bio input[type=text ]{
+   height: 50px;
+   max-width: 300px;
+   border-radius: 20px;
+}
+@media only screen and (min-width: 800px) {
+    .basic-info,.partner {
+      width: 70%;
+    }
+  }
+
+
+
+  
