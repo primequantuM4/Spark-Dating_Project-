@@ -1,70 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="./suggestion-card.js"></script>
-    <title>Matching</title>
 
-    <style>
-      .user-container {
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+  <script mode="module" src="bootstrap/js/bootstrap.js" defer></script>
+  <script defer src="./suggestion-card.js"></script>
+  <title>Matching</title>
 
-      .user-card {
-        width: 75%;
-        max-height: 50%;
-        padding: 5rem;
-        box-shadow: 0 0 5px rgb(243, 238, 238);
-      }
+  <style>
+    .user-container {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      .user-card img {
-        border-radius: 10px;
-      }
+    .title {
+      font-size: 2rem;
+    }
 
-      .title {
-        font-size: 2rem;
-      }
 
-      .user-card button {
-        margin-top: 20px;
-        width: 25%;
-        padding: 0.5rem 0;
-        border-radius: 1rem;
-        border: 2px solid black;
-      }
+    #likeButton {
+      background-color: green;
+    }
 
-      #likeButton {
-        background-color: green;
-      }
-      #hateButton {
-        background-color: red;
-      }
+    #hateButton {
+      background-color: red;
+    }
 
-      body {
-        background-color: rgb(243, 238, 238);
-      }
-    </style>
-  </head>
+    body {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
 
-  <body>
-    <nav>
-      <a href="/home.html">home</a>
-      <a href="/chats.html">chats</a>
-      <a href="/edit-profile.html">edit profile</a>
-      <a href="/matching.html">matching</a>
-      <a href="/logout.html">logout</a>
-    </nav>
+<body>
+  <nav>
+    <a href="/home.html">home</a>
+    <a href="/chats.html">chats</a>
+    <a href="/edit-profile.html">edit profile</a>
+    <a href="/matching.html">matching</a>
+    <a href="/logout.html">logout</a>
+  </nav>
 
-    <div
-      class="user-container"
-      id="userContainer"
-      style="border: 1px solid black"
-    ></div>
-  </body>
+  <div class="user-container" id="userContainer" style="border: 1px solid black"></div>
+</body>
+
 </html>
