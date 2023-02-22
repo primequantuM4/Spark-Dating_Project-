@@ -1,100 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chats</title>
-    <style>
-      .card {
-        border-radius: 3rem;
-        box-shadow: 0 0 10px #b6b2b2;
-        padding: 2rem;
-        margin: 10vw 5vw;
-        background-color: white;
-      }
-      img {
-        border-radius: 2rem;
-      }
-      body {
-        background-color: rgb(243, 238, 238);
-      }
-      .unread {
-        background-color: pink;
-        color: black;
-      }
-      .link {
-        margin-top: 3rem;
-        background-color: green;
-        text-decoration: none;
-        padding: 0.5rem;
-        color: white;
-        border: 5px solid grey;
-      }
-    </style>
-  </head>
-  <body>
-    <nav>
-      <a href="/home.html">home</a>
 
-      <a href="/chats.html">chats</a>
-      <a href="/edit-profile.html">edit profile</a>
-      <a href="/matching.html">matching</a>
-      <a href="/logout.html">logout</a>
-    </nav>
-    <div id="chat-cards"></div>
-  </body>
-  <script>
-    const chatCards = document.getElementById("chat-cards");
-    loadCards();
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <script type="module" src="bootstrap/js/bootstrap.js"></script>
+  <title>Chats</title>
+  <style>
+    .card {
+      border-radius: 3rem;
+      border: 2px solid pink;
+      margin: 50px auto;
+      background: #333;
 
-    async function loadCards() {
-      const chats = await getChats();
-      console.log(chats);
-      if (chats.length === 0) {
-        chatCards.innerHTML = `You have'nt matched with anyone. Maybe, maybe you should try this in real life.`;
-      }
-
-      for (const { user, chatInfo } of chats) {
-        const card = new ChatCard(user, chatInfo);
-        console.log(card.getElement());
-        chatCards.appendChild(card.getElement());
-      }
     }
 
-    async function getChats() {
-      const result = await fetch("/api/chats");
-      const chats = result.json();
-      return chats;
+    img {
+      border-radius: 2rem;
+      margin: 5px;
     }
 
-    class ChatCard {
-      constructor(user, chatInfo) {
-        this.div = document.createElement("div");
-        this.fillInnerHtml(user, chatInfo);
-      }
+    body {
+      background-color: black;
+    }
 
-      fillInnerHtml(user, chatInfo) {
-        const { firstName, lastName, photoUrl } = user;
-        const { unreadCount, chatId } = chatInfo;
+    .unread {
+      display: inline-block;
+      margin: 5px;
+      color: pink;
+      text-shadow: black;
+    }
 
-        this.div.innerHTML = `
-            <div class="card">
-                <h3>${firstName} + ${lastName}</h3>
-                <img src="${photoUrl}"/>
+    .card-body {
+      margin: 0px;
+    }
+
+
+    .link {
+      padding: 10px 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="/home.html">home</a>
+
+    <a href="/chats.html">chats</a>
+    <a href="/edit-profile.html">edit profile</a>
+    <a href="/matching.html">matching</a>
+    <a href="/logout.html">logout</a>
+  </nav>
+  <div id="chat-cards"></div>
+</body>
+<script>
+  const chatCards = document.getElementById("chat-cards");
+  loadCards();
+
+  async function loadCards() {
+    const chats = await getChats();
+    console.log(chats);
+    if (chats.length === 0) {
+      chatCards.innerHTML = `You have'nt matched with anyone. Maybe, maybe you should try this in real life.`;
+    }
+
+    for (const { user, chatInfo } of chats) {
+      const card = new ChatCard(user, chatInfo);
+      console.log(card.getElement());
+      chatCards.appendChild(card.getElement());
+    }
+  }
+
+  async function getChats() {
+    const result = await fetch("/api/chats");
+    const chats = result.json();
+    return chats;
+  }
+
+  class ChatCard {
+    constructor(user, chatInfo) {
+      this.div = document.createElement("div");
+      this.fillInnerHtml(user, chatInfo);
+    }
+
+    fillInnerHtml(user, chatInfo) {
+      const { firstName, lastName, photoUrl } = user;
+      const { unreadCount, chatId } = chatInfo;
+
+      this.div.innerHTML = `
+            <div class="card text-white bg-dark mb-3 w-75 d-flex flex-row text-center align-items-start">
+                <div class="col-sm-3">
+                <img class="img-fluid" src="${photoUrl}"/>
+                </div>
+                <div class="card-body col-sm-8">
+                <h3 class="card-title m-2">${firstName} ${lastName}</h3>
+                <div class="card-text">
                 <p> 
                   <span class="unread">
 
-                    Unread ${unreadCount}
+                     ${unreadCount} Unread messages
                     </span>
                   </p>
-                <a class="link" href="chats/${chatId}"> chat now</a>
+                <a class="btn btn-success link" href="chats/${chatId}"> chat now</a>
+                </div>
+              </div>
             </div>
             `;
-      }
-      getElement() {
-        return this.div;
-      }
     }
-  </script>
+    getElement() {
+      return this.div;
+    }
+  }
+</script>
+
 </html>
