@@ -1,153 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
-  </head>
-  <body>
-    <nav>
-      <a href="/home.html">Home</a>
-      <a href="/sign-up.html">Signup</a>
-      <a href="/login.html">Login</a>
-      <a href="/logout.html">Logout</a>
-    </nav>
-    <div class="content-carding">
-      <h1>Login</h1>
-      <form id="login-form">
-        <label>
-          email
-          <input type="text" name="email" value="abebe@gmail.com" required />
-        </label>
-        <br />
 
-        <label>
-          password
-          <input type="password" name="password" value="abebe" type="password" />
-        </label>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <script type="module" src="./bootstrap/js/bootstrap.js"></script>
 
-        <br />
-        <input type="submit" />
-      </form>
+  <title>login</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/home.html">Back to Home</a>
+
+  </nav>
+  <div class="content-carding">
+    <h1>Login</h1>
+    <form id="login-form">
+      <label class="">
+
+        <input type="text" name="email" placeholder="Email" required />
+      </label>
+      <br />
+
+      <label>
+        <input type="password" name="password" placeholder="Password" type="password" />
+      </label>
+
+      <br />
+      <input class="btn text-center" value="Login" type="submit" />
+    </form>
+    <div class="signupish">
+      <p>Don't have an account? <a href="sign-up.html">Create one</a></p>
     </div>
-    <style>
-      /* Style the navigation bar */
-*{
-  padding: 0%;
-  margin: 0%;
-}
-nav {
-  background-color: #d3922c;
-  overflow: hidden;
-  font-size: 16px;
-  display: flex;
-  justify-content: space-around;
-}
 
-nav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+  </div>
+  <style>
+    /* Style the navigation bar */
+    * {
+      padding: 0%;
+      margin: 0%;
+    }
 
-nav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    body {
+      background-color: black;
+    }
 
-/* Style the login form */
-.content-carding{
-  background-color: rgba(180, 8, 8, 0.5);
-  display: flex;
-  margin: 5% 25%;
-  width: 40%;
-  padding: 5%;
-  flex-direction: column;
-  border-radius: 25px;
-}
-form {
-  margin: 0 auto;
-}
+    nav {
+      background-color: rgb(176, 39, 124, 0.15);
+      border-bottom-left-radius: 20%;
+      border-bottom-right-radius: 20%;
+      overflow: hidden;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-around;
+    }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-}
+    nav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-.content-carding > h1{
+    nav a:hover {
+      color: rgb(165, 9, 170);
+      text-shadow: 1px 1px 3px black;
+    }
 
-  margin: 0 auto;
-}
-input[type="text"],
-input[type="password"]{
-  display: block;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 10px;
-  background:-webkit-linear-gradient(right,#F4357A,#E726E0);
-  z-index: -1;
-}
+    /* Style the login form */
+    .content-carding {
+      background-color: rgba(46, 26, 41, 0.2);
+      display: flex;
+      margin: 4% auto;
+      width: 30%;
+      height: 50%;
+      padding: 3% 1%;
+      flex-direction: column;
+      border-radius: 25px;
+    }
 
-input[type="submit"] {
-  background-color: rgb(7, 36, 113);
-  width: 50%;
-  height: 30px;
-  border-radius: 15px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
+    form {
+      margin: 0 auto;
+      width: 100%;
+    }
 
-input[type="submit"]:hover {
-  background-color: #555;
-  border: none;
-}
+    label {
+      display: block;
+      text-align: center;
+      margin: 5px auto;
+    }
 
-/* Style the page heading */
-h1 {
-  margin: 20px;
-  font-size: 32px;
-}
+    .content-carding>h1 {
 
-/* Style the body */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  /* background-image: linear-gradient(to right bottom, #2cd392, #922cd3); */
-  color:#fff;
-  
-}
+      margin: 0px auto 30px;
+    }
 
-    </style>
+    input[type="text"],
+    input[type="password"] {
+      display: block;
+      margin: 0px auto;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      width: 80%;
+      z-index: -1;
+    }
 
-    <script src="/extract-form.js"></script>
-    <script>
-      const NEXT_URL = "/matching.html";
-      const loginForm = document.querySelector("#login-form");
-      loginForm.onsubmit = async function (event) {
-        event.preventDefault();
+    input[type="submit"] {
+      display: block;
+      background: -webkit-linear-gradient(right, #F4357A, #E726E0);
+      width: 120px;
+      height: 50px;
+      border-radius: 8px;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      margin: 0px auto;
+      text-align: center;
+    }
 
-        const apiUrl = "/api/users/logged-in";
-        const sentObject = extractForm(event.target);
-        const options = {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(sentObject),
-        };
+    input[type="submit"]:hover {
+      background: -webkit-linear-gradient(right, #a72655, #a71da3);
+      border: none;
+    }
 
-        const result = await fetch(apiUrl, options);
-        if (result.ok) {
-          const data = await result.json();
-          console.log(data);
-          window.location = NEXT_URL;
-        } else {
-          console.log("error", result);
-        }
+    /* Style the page heading */
+    h1 {
+      margin: 20px auto;
+      font-size: 32px;
+    }
+
+    /* Style the body */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      /* background-image: linear-gradient(to right bottom, #2cd392, #922cd3); */
+      color: #fff;
+
+    }
+
+    .signupish {
+      margin: 20px auto;
+    }
+  </style>
+  <script src="/extract-form.js"></script>
+  <script>
+    const NEXT_URL = "/matching.html";
+    const loginForm = document.querySelector("#login-form");
+    loginForm.onsubmit = async function (event) {
+      event.preventDefault();
+
+      const apiUrl = "/api/users/logged-in";
+      const sentObject = extractForm(event.target);
+      const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(sentObject),
       };
-    </script>
-  </body>
+
+      const result = await fetch(apiUrl, options);
+      if (result.ok) {
+        const data = await result.json();
+        console.log(data);
+        window.location = NEXT_URL;
+      } else {
+        console.log("error", result);
+      }
+    };
+  </script>
+
+
+</body>
+
 </html>
