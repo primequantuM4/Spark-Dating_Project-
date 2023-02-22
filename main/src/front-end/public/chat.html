@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chat</title>
+
+    <style>
+      #message-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+      }
+      .mine {
+        background-color: pink;
+        align-self: end;
+        width: 75%;
+      }
+
+      .other {
+        background-color: lightblue;
+        align-self: start;
+        width: 75%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/home.html">home</a>
+
+      <a href="/chats.html">chats</a>
+      <a href="/edit-profile.html">edit profile</a>
+      <a href="/matching.html">matching</a>
+    </nav>
+
+    <div>
+      <h1>chat with</h1>
+      <img id="profile-pic" src="" alt="profilepic" />
+      <p id="name-slot">--name--</p>
+    </div>
+    <div id="message-container">
+      <p class="their">hi</p>
+      <p class="mine">hi</p>
+    </div>
+    <div>
+      <input id="message-input" type="text" />
+    </div>
+
+    <script>
+      class MessageBox {
+        constructor(message, className) {
+          console.log(message);
+          this.div = document.createElement("div");
+          this.div.classList.add(className);
+          this.div.innerHTML = this.fillInside(message);
+        }
+
+        getElement() {
+          return this.div;
+        }
+
+        fillInside(message) {
+          const template = `
+         <p>${message}</p>
+          `;
+          return template;
+        }
+      }
+
+      class MyMessageBox extends MessageBox {
+        constructor(message) {
+          super(message, "mine");
+        }
+      }
+
+      class OtherMessageBox extends MessageBox {
+        constructor(message) {
+          super(message, "other");
+        }
+      }
+    </script>
+
+    <script>
+      function getChatId() {
+        const currentUrl = window.location.href;
+        const url = new URL(currentUrl);
+        url.search = "";
+        const lastSegment = url.pathname.split("/").pop();
+
+        return lastSegment;
+      }
+
+      function addMessageBox(message, isMine) {
+        let messageBox = isMine
+          ? new MyMessageBox(message)
+          : new OtherMessageBox(message);
+        messageContainer.appendChild(messageBox.getElement());
+      }
+
+      async function loadPage() {
+        const result = await fetch(`/api/chats/${getChatId()}`);
+        const data = await result.json();
+        const { user, messages } = data;
+        console.log(user, messages);
+        nameSlot.textContent = user.firstName + " " + user.lastName;
+        profilePicImg.setAttribute("src", user.photoUrl);
+
+        for (const message of messages) {
+          const amBoy = user.sex === "female";
+          const sentByBoy = message.sentByBoy;
+          const messageIsMine = (amBoy && sentByBoy) || (!amBoy && !sentByBoy);
+          addMessageBox(message.content, messageIsMine);
+        }
+      }
+    </script>
+
+    <button onclick="closeConnection()">close</button>
+
+    <script>
+      const profilePicImg = document.getElementById("profile-pic");
+      const nameSlot = document.getElementById("name-slot");
+      const messageInput = document.getElementById("message-input");
+      const messageContainer = document.getElementById("message-container");
+      let ws;
+
+      messageInput.addEventListener("keyup", onSend);
+      loadPage();
+      openConnection();
+
+      function openConnection() {
+        const hostName = new URL(window.location.href).host;
+        const wsUrl = `ws://${hostName}/${getChatId()}`;
+        ws = new WebSocket(wsUrl);
+
+        ws.addEventListener("open", () => alert("connected"));
+        ws.addEventListener("message", onRecieve);
+        ws.addEventListener("close", (e) => alert("closed" + e.reason));
+        window.addEventListener("unload", (e) => ws.close());
+      }
+
+      function onRecieve(event) {
+        const message = event.data;
+        addMessageBox(message, false);
+      }
+
+      function onSend(event) {
+        if (event.keyCode !== 13) return;
+        const message = messageInput.value;
+        messageInput.value = "";
+        ws.send(message);
+
+        addMessageBox(message, true);
+      }
+    </script>
+  </body>
+</html>
