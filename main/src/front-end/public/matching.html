@@ -20,7 +20,94 @@
     <div
       class="user-container"
       id="userContainer"
-      style="border: 1px solid black"
+      style="border: 1px solid white"
     ></div>
+    <style>
+      /* Set default margin and padding to 0 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the navigation bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+  color: #fff;
+}
+
+nav a {
+  color:black;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Style the user card container */
+.user-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* Style the user card */
+.user-card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+.user-card__img {
+  margin-bottom: 10px;
+}
+
+.user-card__img img {
+  width: 100%;
+  height: auto;
+}
+
+.user-card__title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.user-card__location,
+.user-card__religion,
+.user-card__hobbys {
+  margin-bottom: 10px;
+}
+
+/* Style the like and hate buttons */
+button {
+  font-size: 2rem;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#likeButton {
+  color: #ff69b4;
+  background-color: #fff;
+}
+
+#hateButton {
+  color: #fff;
+  background-color: #ff69b4;
+}
+
+    </style>
   </body>
 </html>

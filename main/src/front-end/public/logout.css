@@ -1,0 +1,58 @@
+.background{
+    background-color: black;
+    background-blend-mode: darken;
+    background-size: cover;
+    height: 90px;
+    margin-top: 0px
+    
+}
+nav ul{
+    list-style: none;
+}
+.navbar{
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    cursor: pointer;
+    color: antiquewhite;
+    
+}
+.navlist{
+    display: flex;
+
+    
+    
+}
+.navlist li{
+    font-size: 20px;
+}
+.l1{
+    width: 50%;
+}
+.l2{
+    width: 500px;
+}
+.l3{
+    width: 400px;
+}
+.navlist .l4{
+    padding-right: -200px;
+}
+.navlist li{
+    list-style: none;
+    padding: 2%;
+} 
+.navlist li a{
+    text-decoration: none;
+    color: #59BAB8;
+    
+}
+.navlist li a:hover{
+    color: antiquewhite;
+}
+
+#logout-btn{
+    border-radius: 25px;
+}

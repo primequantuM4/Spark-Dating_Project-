@@ -1,15 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fill Profile | Fonka</title>
-    <link rel="stylesheet" href="editprofile.css" />
-    <script
-      src="https://kit.fontawesome.com/8d2656f544.js"
-      crossorigin="anonymous"
-    ></script>
+    
+    <script src="https://kit.fontawesome.com/8d2656f544.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
   </head>
   <body>
@@ -19,96 +17,80 @@
       <a href="/login.html">login</a>
     </nav>
     <header>
-      <h1>Fill out your profile</h1>
-      <p>
-        One more step before you enjoy Spark!
-        <br />
-        We need this to give you good partner suggestions.
-      </p>
+      <h2>Fill out your profile</h2>
+
     </header>
     <form action="/users" method="PUT" id="edit-form">
       <fieldset class="account-related">
-        <legend>Account Related</legend>
+        <h2>Account Related</h2>
         <div>
-          <label
-            >Email
+          <h3>Email</h3>
             <input type="email" name="email" value="abebe@gmail.com" required
-          /></label>
-        </div>
-        <div>
-          <label
-            >Password
+          />
+        
+        
+          <h3>Password</h3>
+         
             <input type="password" name="password" value="abebe" required
-          /></label>
+          />
+
         </div>
       </fieldset>
 
       <fieldset class="basic-info">
-        <legend>Basic Info</legend>
-        <div>
-          <div>
-            <label
-              >* First Name
-              <input type="text" name="firstName" value="Abebe" required
-            /></label>
-          </div>
-
-          <div>
-            <label
-              >* Father Name
-              <input type="text" name="lastName" value="Kebede" required
-            /></label>
-          </div>
-
-          <div>
-            <p>* Sex</p>
-
-            <label
-              >Male
-              <input type="radio" name="sex" value="male" checked required
-            /></label>
-
-            <label
-              >Female <input type="radio" name="sex" value="female" required
-            /></label>
-          </div>
-
-          <div class="radio">
-            * Religion
-
-            <label>
-              <input type="radio" name="religion" value="catholic" required />
-              Catholic
-              <span></span>
-            </label>
-
-            <label>
-              <input type="radio" name="religion" value="judaism" required />
-              Judaism
-              <span></span>
-            </label>
-            <label>
-              <input type="radio" name="religion" value="muslim" required />
-              Muslim
-              <span></span>
-            </label>
-            <label>
-              <input type="radio" name="religion" value="orthodox" required />
-              Orthodox
-              <span></span>
-            </label>
-            <label>
-              <input type="radio" name="religion" value="protestant" required />
-              Protestant
-              <span></span>
-            </label>
-            <label>
-              <input type="radio" name="religion" value="other" required />
-              Other
-              <span></span>
-            </label>
-          </div>
+        <h2>Basic Info</h2>
+        
+          <div class="first-name">
+           <h3>First Name</h3>
+            <input type="text" name="firstName" value="Abebe" required
+          />
         </div>
+    
+        <div>
+          <h3>Father Name</h3>
+            <input type="text" name="lastName" value="Kebede" required
+          />
+        </div>
+    
+        <div class="basic-detail"> 
+        
+          <h3>Gender</h3>
+    
+          <div>
+           
+          <label for="">Male</label>
+          <input type="radio" name="sex" value="male" checked required
+          />
+          <label for="">Female</label>
+            <input type="radio" name="sex" value="female" required
+          />
+         
+        </div>
+    
+        <div class="radio ">
+          <h3>Religion</h3>
+    
+          
+            <input type="radio" name="religion" value="catholic" required />
+          <label for="">Catholic</label>
+    
+          
+            <input type="radio" name="religion" value="judaism" required />
+            Judaism
+            <label for="">Judaism</label>
+         
+          
+            <input type="radio" name="religion" value="muslim" required />
+            <label for="">Muslim</label>
+            <input type="radio" name="religion" value="orthodox" required />
+           <label for="">Orthodox</label>
+            <input type="radio" name="religion" value="protestant" required />
+           <label for="">Protestant</label>
+            <input type="radio" name="religion" value="other" required />
+            <label for="">Other</label>
+        </div>
+      
+
 
         <div>
           <div>
@@ -117,414 +99,346 @@
               <input type="date" name="birthday" value="2000-01-01" required
             /></label>
           </div>
-
-          <div class="bio">
-            <label
-              >* Bio. Say A few Words About Your Self<br />
+  
+          <div class="bio Bio">
+            <h3>
+              Bio. Say A few Words About Your Self</h3>
               <input
                 type="text"
                 name="bio"
                 value="The fault in our dreams"
                 required
-            /></label>
+            />
           </div>
-
+  
           <div class="upload-photo">
-            <label id="label"
-              >Profile Picture
+            <label id="label">Profile picture</label>
+              
               <input
                 type="file"
                 name="profilePicture"
                 accept="image/png, image/jpeg"
                 onchange="preview_image(event)"
               />
-            </label>
-            <img id="output_image" />
+           
+            <img id='output_image'/>
           </div>
         </div>
       </fieldset>
 
-      <fieldset class="optional">
-        <legend>Optional</legend>
-        <div class="partner">
-          <div>
-            <div class="religiousPreference">
-              religiousPreferences
-
-              <label>
-                <input
-                  type="checkbox"
-                  name="religiousPreferences"
-                  value="catholic"
-                />
-                Catholic
-                <span></span>
-              </label>
-
-              <label>
-                <input
-                  type="checkbox"
-                  name="religiousPreferences"
-                  value="judaism"
-                />
-                Judaism
-                <span></span>
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="religiousPreferences"
-                  value="musliim"
-                />
-                Muslim
-                <span></span>
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="religiousPreferences"
-                  value="orthodox"
-                />
-                Orthodox
-                <span></span>
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="religiousPreferences"
-                  value="protestant"
-                />
-                Protestant
-                <span></span>
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  name="religiousPreferences"
-                  value="other"
-                />
-                Other
-                <span></span>
-              </label>
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <label
-                >Your Height (in centimeters)
-                <input type="number" name="height" value="150"
-              /></label>
-            </div>
-
-            <div>
-              <p>height range</p>
-
-              <div>
-                <label
-                  >Minimum height
-                  <input type="number" name="minHeight" value="100"
-                /></label>
-              </div>
-
-              <div>
-                <label
-                  >Maximum height
-                  <input type="number" name="maxHeight" value="200"
-                /></label>
-              </div>
-            </div>
-
-            <div>
-              <p>Age Range</p>
-              <label
-                >Minimum Age
-                <input type="number" name="minAge" value="18" />
-
-                >Maximum Age
-                <input type="number" name="maxAge" value="30" />
-              </label>
-            </div>
+      <div class="optional Optional">
+        <h3 class="opt">Optional</h3>
+      <div class="partner">
+      
+        <div>
+          <div class="religiousPreference">
+            
+      religiousPreferences
+  
+            <label>
+              <input
+                type="checkbox"
+                name="religiousPreferences"
+                value="catholic"
+              />
+              Catholic
+              <span></span>
+            </label>
+  
+            <label>
+              <input
+                type="checkbox"
+                name="religiousPreferences"
+                value="judaism"
+              />
+              Judaism
+              <span></span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="religiousPreferences"
+                value="musliim"
+              />
+              Muslim
+              <span></span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="religiousPreferences"
+                value="orthodox"
+              />
+              Orthodox
+              <span></span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="religiousPreferences"
+                value="protestant"
+              />
+              Protestant
+              <span></span>
+            </label>
+            <label>
+              <input type="checkbox" name="religiousPreferences" value="other" />
+              Other
+              <span></span>
+            </label>
           </div>
         </div>
+
+        
+        <div>
+          <div>
+            <label
+              >Your Height (in centimeters)
+              <input type="number" name="height" value="150"
+            /></label>
+          </div>
+  
+          <div>
+            <p>height range</p>
+  
+            <div>
+              <label
+                >Minimum height <input type="number" name="minHeight" value="100"
+              /></label>
+            </div>
+  
+            <div>
+              <label
+                >Maximum height <input type="number" name="maxHeight" value="200"
+              /></label>
+            </div>
+          </div>
+  
+          <div>
+            <p>Age Range</p>
+            <label>Minimum Age
+            <input type="number" name="minAge" value="18" />
+            <label
+              >Maximum Age
+              <input type="number" name="maxAge" value="30" />
+            </label>
+          </div>
+        </div>
+      </div>
+
 
         <div class="Hobbies">
           <div class="outdoor activities"></div>
           <p>Hobbies</p>
           <h3>outdoor activities</h3>
-          <div class="list">
-            <label>
-              <input type="checkbox" name="hobbies" value="traveling" />
-              <div class="container">
-                <div><i class="fa-solid fa-suitcase-rolling"></i></div>
-                <div class="title">traveling</div>
-              </div>
-            </label>
-            <label>
-              <input type="checkbox" name="hobbies" value="partying" />
-              <div class="container">
-                <div><i class="fa-solid fa-champagne-glasses"></i></div>
-                <div class="title">partying</div>
-              </div>
-            </label>
-            <label>
-              <input type="checkbox" name="hobbies" value="events" />
-              <div class="container">
-                <div><i class="fa-solid fa-calendar-days"></i></div>
-                <div class="title">events</div>
-              </div>
-            </label>
-            <label>
-              <input type="checkbox" name="hobbies" value="fishing" />
-              <div class="container">
-                <div><i class="fa-solid fa-fish"></i></div>
-                <div class="title">fishing</div>
-              </div>
-            </label>
-          </div>
-
+            <div  class="list">
+                <label>
+                    <input type="checkbox" name="hobbies" value="traveling" />
+                    <div class="container">
+                      <div><i class="fa-solid fa-suitcase-rolling"></i></div>
+                      <div class="title">traveling</div>
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="hobbies" value="partying" />
+                    <div class="container">
+                      <div><i class="fa-solid fa-champagne-glasses"></i></div>
+                      <div class="title">partying</div>
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="hobbies" value="events" />
+                    <div class="container">
+                      <div><i class="fa-solid fa-calendar-days"></i></div>
+                      <div class="title">events</div>
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="hobbies" value="fishing" />
+                    <div class="container">
+                      <div><i class="fa-solid fa-fish"></i></div>
+                      <div class="title">fishing</div>
+                    </div>
+                  </label>
+            </div>
+          
           <div class="indoor activities">
             <h3>indoor activities</h3>
-            <div class="list">
-              <label>
-                <input type="checkbox" name="hobbies" value="cooking" />
-                <div class="container">
-                  <div><i class="fa-solid fa-utensils"></i></div>
-                  <div class="title">cooking</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="video-games" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      class="icon"
-                      icon="twemoji:video-game"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">video-games</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="reading" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="fluent-mdl2:reading-mode"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">reading</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="writing" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="openmoji:writing-hand-light-skin-tone"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">writing</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="gardening" />
-                <div class="container">
-                  <div>
-                    <iconify-icon icon="maki:garden-centre"></iconify-icon>
-                  </div>
-                  <div class="title">gardening</div>
-                </div>
-              </label>
+            <div  class="list">
+                <label >
+                    <input type="checkbox" name="hobbies" value="cooking" />
+                    <div class="container">
+                      <div><i class="fa-solid fa-utensils"></i></div>
+                      <div class="title">cooking</div>
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="hobbies" value="video-games" />
+                    <div class="container">
+                      <div><iconify-icon class="icon" icon="twemoji:video-game"></iconify-icon></div>
+                      <div class="title">video-games</div>
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="hobbies" value="reading" />
+                    <div class="container">
+                      <div><iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon></div>
+                      <div class="title">reading</div>
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="hobbies" value="writing" />
+                    <div class="container">
+                      <div><iconify-icon icon="openmoji:writing-hand-light-skin-tone"></iconify-icon></div>
+                      <div class="title">writing</div>
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="hobbies" value="gardening" />
+                    <div class="container">
+                      <div><iconify-icon icon="maki:garden-centre"></iconify-icon></div>
+                      <div class="title">gardening</div>
+                    </div>
+                  </label>  
             </div>
           </div>
-          <div class="movies and music">
-            <h3>movies and music</h3>
-            <div class="list">
-              <label>
-                <input type="checkbox" name="hobbies" value="drama" />
-                <div class="container">
-                  <div>
-                    <iconify-icon icon="mdi:drama-masks"></iconify-icon>
-                  </div>
-                  <div class="title">drama</div>
+            <div class="movies and music">
+              <h3>movies and music</h3>
+                <div  class="list">
+                    <label>
+                        <input type="checkbox" name="hobbies" value="drama" />
+                        <div class="container">
+                          <div><iconify-icon icon="mdi:drama-masks"></iconify-icon></div>
+                          <div class="title">drama</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="horror" />
+                        <div class="container">
+                          <div><iconify-icon icon="emojione-monotone:face-screaming-in-fear"></iconify-icon></div>
+                          <div class="title">horror</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="romance" />
+                        <div class="container">
+                          <div><iconify-icon icon="icon-park-outline:oval-love-two"></iconify-icon></div>
+                          <div class="title">romance</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="comedy" />
+                        <div class="container">
+                          <div><iconify-icon icon="fluent:emoji-laugh-24-regular"></iconify-icon></div>
+                          <div class="title">comedy</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="pop-music" />
+                        <div class="container">
+                          <div><iconify-icon icon="noto-v1:guitar"></iconify-icon></div>
+                          <div class="title">pop-music</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="country-music" />
+                        <div class="container">
+                          <div><iconify-icon icon="material-symbols:music-video-rounded"></iconify-icon></div>
+                          <div class="title">country-music</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="rock n roll" />
+                        <div class="container">
+                          <div><iconify-icon icon="mingcute:finger-rock-line"></iconify-icon></div>
+                          <div class="title">rock n roll</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="jazz" />
+                        <div class="container">
+                          <div><iconify-icon icon="noto:trumpet"></iconify-icon></div>
+                          <div class="title">jazz</div>
+                        </div>
+                      </label>
                 </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="horror" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="emojione-monotone:face-screaming-in-fear"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">horror</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="romance" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="icon-park-outline:oval-love-two"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">romance</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="comedy" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="fluent:emoji-laugh-24-regular"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">comedy</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="pop-music" />
-                <div class="container">
-                  <div><iconify-icon icon="noto-v1:guitar"></iconify-icon></div>
-                  <div class="title">pop-music</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="country-music" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="material-symbols:music-video-rounded"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">country-music</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="rock n roll" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="mingcute:finger-rock-line"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">rock n roll</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="jazz" />
-                <div class="container">
-                  <div><iconify-icon icon="noto:trumpet"></iconify-icon></div>
-                  <div class="title">jazz</div>
-                </div>
-              </label>
             </div>
-          </div>
-          <div class="sport">
-            <h3>sports</h3>
-            <div class="list">
-              <label>
-                <input type="checkbox" name="hobbies" value="football" />
-                <div class="container">
-                  <div>
-                    <iconify-icon icon="ri:football-fill"></iconify-icon>
-                  </div>
-                  <div class="title">football</div>
+            <div class="sport">
+              <h3>sports</h3>
+                <div  class="list">
+                    <label >
+                        <input type="checkbox" name="hobbies" value="football" />
+                        <div class="container">
+                          <div><iconify-icon icon="ri:football-fill"></iconify-icon></div>
+                        <div class="title">football</div>
+                        </div>
+                        
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="basketball" />
+                        <div class="container">
+                          <div><iconify-icon class="icon" icon="game-icons:basketball-basket" ></iconify-icon></div>
+                          <div class="title">basketball</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="skating" />
+                        <div class="container">
+                          <div><iconify-icon icon="ic:round-roller-skating"></iconify-icon></div>
+                          <div class="title">skating</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="running" />
+                        <div class="container">
+                          <div><iconify-icon icon="twemoji:man-running-medium-dark-skin-tone"></iconify-icon></div>
+                          <div class="title">running</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="swimming" />
+                        <div class="container">
+                          <div><iconify-icon icon="fa6-solid:person-swimming"></iconify-icon></div>
+                          <div class="title">swimming</div>
+                        </div>
+                      </label>    
                 </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="basketball" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      class="icon"
-                      icon="game-icons:basketball-basket"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">basketball</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="skating" />
-                <div class="container">
-                  <div>
-                    <iconify-icon icon="ic:round-roller-skating"></iconify-icon>
-                  </div>
-                  <div class="title">skating</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="running" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="twemoji:man-running-medium-dark-skin-tone"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">running</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="swimming" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="fa6-solid:person-swimming"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">swimming</div>
-                </div>
-              </label>
             </div>
-          </div>
-          <div class="creative">
-            <h3>creative</h3>
-            <div class="list">
-              <label>
-                <input type="checkbox" name="hobbies" value="drawing" />
-                <div class="container">
-                  <div>
-                    <iconify-icon
-                      icon="ic:round-color-lens"
-                      width="40"
-                      height="40"
-                    ></iconify-icon>
-                  </div>
-                  <div class="title">drawing</div>
+            <div class="creative">
+              <h3>creative</h3>
+                <div class="list">
+                    <label>
+                        <input type="checkbox" name="hobbies" value="drawing" />
+                        <div class="container">
+                          <div><iconify-icon icon="ic:round-color-lens" width="40" height="40"></iconify-icon></div>
+                          <div class="title">drawing</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="dancing" />
+                        <div class="container">
+                          <div><iconify-icon icon="mdi:human-female-dance"></iconify-icon></div>
+                          <div class="title">dancing</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="singing" />
+                        <div class="container">
+                          <div><iconify-icon icon="material-symbols:mic"></iconify-icon></div>
+                          <div class="title">singing</div>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="checkbox" name="hobbies" value="photography" />
+                        <div class="container">
+                          <div><iconify-icon icon="mdi:photography"></iconify-icon></div>
+                          <div class="title">photography</div>
+                        </div>
+                      </label>
                 </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="dancing" />
-                <div class="container">
-                  <div>
-                    <iconify-icon icon="mdi:human-female-dance"></iconify-icon>
-                  </div>
-                  <div class="title">dancing</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="singing" />
-                <div class="container">
-                  <div>
-                    <iconify-icon icon="material-symbols:mic"></iconify-icon>
-                  </div>
-                  <div class="title">singing</div>
-                </div>
-              </label>
-              <label>
-                <input type="checkbox" name="hobbies" value="photography" />
-                <div class="container">
-                  <div>
-                    <iconify-icon icon="mdi:photography"></iconify-icon>
-                  </div>
-                  <div class="title">photography</div>
-                </div>
-              </label>
             </div>
-          </div>
         </div>
-
+        
         <div class="radio">
           <p>Your Education Level</p>
 
@@ -633,31 +547,257 @@
           </label>
         </div>
 
-        <!-------------------------------------------->
-        <div>
-          <p>Location</p>
-          <label>
-            Save My Location
-            <input type="checkbox" name="" id="allow-location-check-box" />
-          </label>
-
-          <label>
-            Good if partner is within
-            <input type="number" name="kmRadius" />
-            kms
-          </label>
-        </div>
-
-        <!-------------------------------------------->
-
         <div>
           <input type="text" />
         </div>
       </fieldset>
 
-      <input type="submit" value="Signup" class="btn" />
+      <input type="submit" value="Signup" class="btn"/>
     </form>
+
+  
   </body>
+
+  <style> 
+body{
+overflow-x: hidden;
+background-color:white;
+margin:0px;
+padding: 0px;
+color:black;
+margin: auto;
+}
+
+nav{
+    background-color: black;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    height: 10vh;
+   
+}
+nav a{
+    font-size: larger;
+    color: #ddd;
+    text-decoration: none;
+    padding:10px;
+}
+/* style for the page header */
+header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+header h1 {
+  font-size: 30px;
+  margin-left: 2%;
+  color: #413627
+  ;
+  
+  position: absolute;
+  
+
+}
+
+/* style for form fields */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+  /* width: 100%; */
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background:white;
+  
+
+  
+
+}
+h1{
+    margin: 15px;
+}
+
+label{
+    font-weight: 800;
+}
+
+
+legend{
+    text-decoration:underline;
+    font-weight: 800;
+    font-size: larger;
+    color:#00917C;
+}
+p{
+    font-size: large;
+    font-weight: bold;
+    background: gray;
+    width: fit-content;
+    padding:10px;
+    
+   
+}
+.account-related{
+    
+  margin-left: 10px;
+    border:0px;
+    display: flex;
+    height: 100px;
+    margin-top: 100px;
+    justify-content: space-around;
+}
+.partner{
+    display: flex;
+    /*width: 70%;*/
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:15px;
+}
+.p{
+  color: black;
+}
+.partner input{
+    width:50px;
+}
+
+.basic-info{
+    /*width:70%;*/
+    padding:10px;
+    border:0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;  
+}
+.basic-info div , .partner div{
+    margin-bottom: 30px;
+}
+.upload-photo{
+    width: 200px;
+    min-height: 40vh;
+    border:solid 3px;
+    border-radius: 30px;
+    display:grid;
+    justify-items: center;
+    align-items: center;
+}
+.upload-photo input{
+    display: none;
+}
+
+
+
+
+header p{
+  color: #00917C;
+  display: contents;
+}
+
+
+.container{
+    width:100px;
+    height: 70px;
+    display:flex;
+    flex-direction: column;
+    color:black;
+    background-color:antiquewhite;
+    align-items: center;
+    justify-content: center;
+    border:2px solid #ddd;
+    box-shadow:5px 15px 20px 4px rgba(0,0,0,0.4);
+    margin:20px;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+    overflow: hidden;
+    
+}
+.religiousPreference label{
+    display:block;
+    background:-webkit-linear-gradient(right,#00917C,antiquewhite);
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Hobbies label:before{
+    content:'';
+    background-color: #faebd7;
+}
+.Hobbies .container:hover{
+    background-color:gray;
+}
+.Hobbies label input[type="checkbox"]:checked~.container{
+    border:blueviolet 5px solid;
+    color:blueviolet;
+    font-weight: bold;
+}
+.Hobbies input[type="checkbox"]{
+    display:none;
+}
+.Hobbies iconify-icon{
+    font-size: 25px;
+}
+.list{
+    display:flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    box-shadow: 0px 4px 5px 6px rgba(0,0,0,0.2);
+}
+.btn{
+    background-color: black;
+    color: black;
+    border-radius: 20px;
+    padding:10px;
+    font-size: 20px;
+}
+.btn:hover{
+    font-size: 25px;
+}
+#delete-account-btn{
+    background-color: red;
+    color: black;
+    border-radius: 20px;
+    padding:10px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+#delete-account-btn:hover{
+    background-color: black;
+    color: red;
+}
+
+input{
+  color: black;
+}
+header .one{
+  position: absolute;
+  margin-left: -1000px;
+}
+.acc-labels{
+  margin-top: 50px;
+}
+
+.partner{
+  margin-top: -440px;
+  margin-left: 5px;
+}
+.optional .opt{
+  position: absolute;
+  margin-top: -490px;
+  margin-left: 5px;
+}
+@media only screen and (min-width: 800px) {
+    .basic-info,.partner {
+      width: 70%;
+    }
+  }
+  
+    </style>
   <script src="./extract-form.js"></script>
 
   <script>
@@ -684,18 +824,19 @@
       window.location = NEXT_URL;
     };
 
-    function preview_image(event) {
-      document.getElementById("output_image").style.display = "block";
-      var reader = new FileReader();
-      reader.onload = function () {
-        var output = document.getElementById("output_image");
-        output.src = reader.result;
-        document.getElementById("output_image").style.width = "200px";
-        document.getElementById("output_image").style.height = "40vh";
-        document.getElementById("output_image").style.borderRadius = "30px";
-        document.getElementById("label").style.display = "none";
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
+    function preview_image(event){
+
+document.getElementById('output_image').style.display='block';
+var reader = new FileReader();
+reader.onload = function(){
+    var output = document.getElementById('output_image');
+    output.src = reader.result;
+    document.getElementById('output_image').style.width='200px';
+    document.getElementById('output_image').style.height='40vh';
+    document.getElementById('output_image').style.borderRadius='30px';
+    document.getElementById('label').style.display='none';
+}
+reader.readAsDataURL(event.target.files[0]);
+};
   </script>
 </html>
