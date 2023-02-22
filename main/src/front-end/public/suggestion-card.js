@@ -1,7 +1,7 @@
 class userCard {
   constructor({ id, firstName, lastName, age, religion, bio, photoUrl }) {
     this.html = `<div class="user-card">
-        <div class="user-card__title">${firstName} ${lastName}</div>
+        <div class="title">${firstName} ${lastName}</div>
         <div class="user-card__img"><img src="${photoUrl}" alt=""></div>
         <div class="user-card__location">Age ${age}</div>
         <div class="user-card__religion">Religion: ${religion}</div>

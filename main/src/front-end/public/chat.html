@@ -16,12 +16,57 @@
         background-color: pink;
         align-self: end;
         width: 75%;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .mine,
+      .other {
+        margin: 5px 0;
+        box-shadow: 0 0 10px rgb(208, 208, 208);
       }
 
       .other {
         background-color: lightblue;
         align-self: start;
         width: 75%;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      #profile-pic {
+        width: 15vw;
+        height: 15vw;
+        object-fit: cover;
+        border-radius: 100%;
+        border: 5px solid black;
+      }
+
+      .chat-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        height: 5vw;
+        box-shadow: 0 0 5px rgb(243, 238, 238);
+        margin: 10vw 0;
+      }
+
+      body {
+        background-color: rgb(243, 238, 238);
+      }
+
+      input {
+        padding: 0.3rem;
+        border-radius: 8px;
+        border: 1px solid black;
+        width: 75%;
+        margin-top: 1rem;
       }
     </style>
   </head>
@@ -34,17 +79,14 @@
       <a href="/matching.html">matching</a>
     </nav>
 
-    <div>
-      <h1>chat with</h1>
+    <div class="chat-header">
       <img id="profile-pic" src="" alt="profilepic" />
       <p id="name-slot">--name--</p>
+      <div></div>
     </div>
-    <div id="message-container">
-      <p class="their">hi</p>
-      <p class="mine">hi</p>
-    </div>
+    <div id="message-container"></div>
     <div>
-      <input id="message-input" type="text" />
+      <input id="message-input" type="text" placeholder="message " />
     </div>
 
     <script>
@@ -114,8 +156,6 @@
         }
       }
     </script>
-
-    <button onclick="closeConnection()">close</button>
 
     <script>
       const profilePicImg = document.getElementById("profile-pic");

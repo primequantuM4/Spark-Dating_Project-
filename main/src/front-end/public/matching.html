@@ -6,6 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="./suggestion-card.js"></script>
     <title>Matching</title>
+
+    <style>
+      .user-container {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .user-card {
+        width: 75%;
+        max-height: 50%;
+        padding: 5rem;
+        box-shadow: 0 0 5px rgb(243, 238, 238);
+      }
+
+      .user-card img {
+        border-radius: 10px;
+      }
+
+      .title {
+        font-size: 2rem;
+      }
+
+      .user-card button {
+        margin-top: 20px;
+        width: 25%;
+        padding: 0.5rem 0;
+        border-radius: 1rem;
+        border: 2px solid black;
+      }
+
+      #likeButton {
+        background-color: green;
+      }
+      #hateButton {
+        background-color: red;
+      }
+
+      body {
+        background-color: rgb(243, 238, 238);
+      }
+    </style>
   </head>
 
   <body>
