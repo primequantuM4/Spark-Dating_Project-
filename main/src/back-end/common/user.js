@@ -23,6 +23,8 @@ class User {
     this.firstName = userDocument.firstName;
     this.lastName = userDocument.lastName;
 
+    this.email = userDocument.email;
+
     this.sex = userDocument.sex;
     this.religion = userDocument.religion;
 
@@ -61,6 +63,8 @@ class User {
     this.latitude = userDocument.latitude || null;
     this.longitude = userDocument.longitude || null;
     this.kmRadius = userDocument.kmRadius || null;
+
+    this.hideEmails = userDocument.hideEmails || "";
   }
 
   scoreAge(otherUser) {

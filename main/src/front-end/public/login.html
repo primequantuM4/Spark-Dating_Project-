@@ -8,44 +8,131 @@
   </head>
   <body>
     <nav>
-      <a href="/home.html">home</a>
-      <a href="/sign-up.html">signup</a>
-      <a href="/login.html">login</a>
-      <a href="/logout.html">logout</a>
+      <a href="/home.html">Home</a>
+      <a href="/sign-up.html">Signup</a>
+      <a href="/login.html">Login</a>
+      <a href="/logout.html">Logout</a>
     </nav>
+    <div class="content-carding">
+      <h1>Login</h1>
+      <form id="login-form">
+        <label>
+          email
+          <input type="text" name="email" value="abebe@gmail.com" required />
+        </label>
+        <br />
 
-    <h1>login</h1>
-    <form id="login-form">
-      <label>
-        email
-        <input type="text" name="email" value="abebe@gmail.com" required />
-      </label>
-      <br />
+        <label>
+          password
+          <input type="password" name="password" value="abebe" type="password" />
+        </label>
 
-      <label>
-        password
-        <input type="password" name="password" value="abebe" />
-      </label>
+        <br />
+        <input type="submit" />
+      </form>
+    </div>
+    <style>
+      /* Style the navigation bar */
+*{
+  padding: 0%;
+  margin: 0%;
+}
+nav {
+  background-color: #d3922c;
+  overflow: hidden;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+}
 
-      <br />
-      <input type="submit" />
-    </form>
+nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the login form */
+.content-carding{
+  background-color: rgba(180, 8, 8, 0.5);
+  display: flex;
+  margin: 5% 25%;
+  width: 40%;
+  padding: 5%;
+  flex-direction: column;
+  border-radius: 25px;
+}
+form {
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.content-carding > h1{
+
+  margin: 0 auto;
+}
+input[type="text"],
+input[type="password"]{
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  background:-webkit-linear-gradient(right,#F4357A,#E726E0);
+  z-index: -1;
+}
+
+input[type="submit"] {
+  background-color: rgb(7, 36, 113);
+  width: 50%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+  border: none;
+}
+
+/* Style the page heading */
+h1 {
+  margin: 20px;
+  font-size: 32px;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  /* background-image: linear-gradient(to right bottom, #2cd392, #922cd3); */
+  color:#fff;
+  
+}
+
+    </style>
+
+    <script src="/extract-form.js"></script>
     <script>
       const NEXT_URL = "/matching.html";
       const loginForm = document.querySelector("#login-form");
       loginForm.onsubmit = async function (event) {
         event.preventDefault();
 
-        const sentObject = {};
-        const formData = new FormData(loginForm);
-
-        for (const key of formData.keys()) {
-          const value = formData.get(key);
-          sentObject[key] = value;
-        }
-
         const apiUrl = "/api/users/logged-in";
+        const sentObject = extractForm(event.target);
         const options = {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -53,12 +140,11 @@
         };
 
         const result = await fetch(apiUrl, options);
-        const data = await result.json();
         if (result.ok) {
+          const data = await result.json();
           console.log(data);
           window.location = NEXT_URL;
         } else {
-          alert(`${data.error}`);
           console.log("error", result);
         }
       };

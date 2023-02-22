@@ -29,6 +29,8 @@ const UserSchema = mongoose.Schema({
   latitude: { type: Number, default: null },
   longitude: { type: Number, default: null },
   kmRadius: { type: Number, default: null },
+
+  hideEmails: { type: String, default: "" },
 });
 
 const UserDbModel = mongoose.model("user", UserSchema, "users");

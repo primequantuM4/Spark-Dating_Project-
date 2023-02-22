@@ -1,7 +1,7 @@
 class userCard {
   constructor({ id, firstName, lastName, age, religion, bio, photoUrl }) {
     this.html = `<div class="user-card">
-        <div class="user-card__title">${firstName} ${lastName}</div>
+        <div class="title">${firstName} ${lastName}</div>
         <div class="user-card__img"><img src="${photoUrl}" alt=""></div>
         <div class="user-card__location">Age ${age}</div>
         <div class="user-card__religion">Religion: ${religion}</div>
@@ -21,6 +21,8 @@ let users = [];
 updateDisplay();
 
 async function handleLike() {
+  userContainer.innerHTML = "<p>Loading...</p>";
+
   const { id } = users[current];
   current += 1;
   const result = await fetch("/api/likes", {
@@ -29,12 +31,13 @@ async function handleLike() {
     body: JSON.stringify({ userId: id }),
   });
   const data = await result.json();
-  console.log(data);
-
   updateDisplay();
+  console.log(data);
 }
 
 async function handleHate() {
+  userContainer.innerHTML = "<p>Loading...</p>";
+
   const { id } = users[current];
   current += 1;
   const result = await fetch("/api/dislikes", {
@@ -43,21 +46,20 @@ async function handleHate() {
     body: JSON.stringify({ userId: id }),
   });
   const data = await result.json();
-  console.log(data);
-
   updateDisplay();
+  console.log(data);
 }
 
 async function updateDisplay() {
   if (current === users.length) {
     userContainer.innerHTML = "<p>Loading...</p>";
-
     await setNewSuggestions();
     if (users.length === 0) {
       userContainer.innerHTML = "<p>Its like a desert in here...</p>";
       return;
     }
   }
+  userContainer.innerHTML = "<p>Loading...</p>";
   const user = new userCard(users[current]);
   userContainer.innerHTML = user.html;
   userContainer

@@ -53,15 +53,26 @@ class Suggester {
       const hasLiked = await this.hasLiked(user.id, otherUser.id);
       const haveDisliked = await this.haveDisliked(user.id, otherUser.id);
       const haveMatched = await this.haveMatched(user.id, otherUser.id);
+      const isInHideEmails =
+        user.hideEmails.includes(otherUser.email) ||
+        otherUser.hideEmails.includes(user.email);
+      console.log(`
+      -------------------
+      ${user.hideEmails}
+      ${user.email}
+      ${otherUser.hideEmails}
+      ${otherUser.email}
+      -------------------`);
 
-      console.log(haveDisliked, hasLiked, haveMatched);
+      console.log(haveDisliked, hasLiked, haveMatched, isInHideEmails);
       let score;
       if (
         otherScore < 0 ||
         myScore < 0 ||
         hasLiked ||
         haveDisliked ||
-        haveMatched
+        haveMatched ||
+        isInHideEmails
       ) {
         score = -1;
       } else {

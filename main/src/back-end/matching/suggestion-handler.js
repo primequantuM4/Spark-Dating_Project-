@@ -14,6 +14,8 @@ class SuggestionHandler {
     const canMatch = await this.canMatch(likerId, likedId);
     if (canMatch) {
       matchCreateResult = await this.match(likerId, likedId);
+      await LikeDbModel.deleteOne({ likerId, likedId });
+      await LikeDbModel.deleteOne({ likerId: likedId, likedId: likerId });
     }
     await suggester.updateScores();
 
