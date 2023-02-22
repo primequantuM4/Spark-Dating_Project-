@@ -4,280 +4,271 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Edit Profile | Fonka</title>
+    <link rel="stylesheet" href="./editprofile.css">
   </head>
   <body>
-    <nav>
-      <a href="/home.html">home</a>
+    <nav class="navbar background">
+      <ul class="navlist">
+      <li class="l1"><a href="/home.html">Home</a></li>
 
-      <a href="/chats.html">chats</a>
-      <a href="/edit-profile.html">edit profile</a>
-      <a href="/matching.html">matching</a>
-      <a href="/logout.html">logout</a>
+      <li class="l2"><a href="/chats.html">Chats</a></li>
+      <li class="l3"><a href="/edit-profile.html">Edit Profile</a></li>
+      <li class="l4"><a href="/matching.html">Matching</a></li>
+      <li class="l5"><a href="/logout.html">Logout</a></li>
+      </ul>
     </nav>
 
     <header>
-      <h1>Edit ur profile</h1>
+      <h1>Edit Your Profile</h1>
     </header>
 
     <img src="" alt="profile picture" id="profile-picture" />
+    <div class="acc-related">
     <form id="edit-form">
-      <fieldset>
-        <legend>Account Related</legend>
-        <div>
-          <label
-            >Email <input type="email" name="email" required disabled
-          /></label>
+    
+        <h2>Account Related</h2>
+        <div class="Acc-h4>s">
+        <h3>Email</h3>
+         <input type="email" name="email" required disabled
+          >
+          <h3>Password</h3>
+            <input type="password" name="password" required
+          >
         </div>
-        <div>
-          <label
-            >Password <input type="password" name="password" required
-          /></label>
-        </div>
-      </fieldset>
+      </form></div>
 
-      <fieldset>
-        <legend>Basic Info</legend>
+  
+  <div class="basic-info">
+        <h2>Basic Info</h2>
 
-        <div>
-          <label
-            >* First Name
+        <div class="first-name">
+          
+            <h3>First Name</h3>
             <input type="text" name="firstName" value="Abebe" required disabled
-          /></label>
+          />
         </div>
 
-        <div>
-          <label
-            >* Father Name
+        <div class="father-name">
+          <h3>
+            Father Name</h3>
             <input type="text" name="lastName" value="Kebede" required disabled
-          /></label>
+          />
         </div>
-
+<div class="basic-detail">
         <div>
-          <p>* Sex</p>
+          <h3>Gender</h3>
+         
 
-          <label
-            >Male
-            <input
+          <div>
+            <label for="">Male</label> 
+            <input class="radio"
               type="radio"
               name="sex"
               value="male"
               checked
               required
               disabled
-          /></label>
+          />
 
-          <label
-            >Female
-            <input type="radio" name="sex" value="female" required disabled
-          /></label>
+          
+            <label for="">Female</label>
+            <input class="radio" type="radio" name="sex" value="female" required disabled
+          />
         </div>
 
         <div>
-          * Religion
+          <h3>Religion</h3>
 
-          <label>
+          
+            <label for="">
             <input
               type="radio"
               name="religion"
               value="catholic"
               required
               checked
-            />
-            Catholic
-          </label>
+            /></label><label for="">Catholic
+          
 
-          <label>
+          
             <input type="radio" name="religion" value="judaism" required />
-            Judaism
-          </label>
-          <label>
+            Judaism</label>
+          
+          <label for="">
             <input type="radio" name="religion" value="muslim" required />
-            Muslim
-          </label>
-          <label>
+            Muslim</label>
             <input type="radio" name="religion" value="orthodox" required />
             Orthodox
-          </label>
-          <label>
+          
+        <label for="">
             <input type="radio" name="religion" value="protestant" required />
             Protestant
-          </label>
-          <label>
+          </label><label for="">          
             <input type="radio" name="religion" value="other" required />
             Other
           </label>
         </div>
 
         <div>
-          <label
-            >* Birthday
+          <h3>
+            Birthday</h3>
             <input type="date" name="birthday" value="2000-01-01" required
-          /></label>
+          />
         </div>
 
-        <div>
-          <label
-            >* Bio. Say A few Words About Your Self
+        <div class="Bio">
+          <h3>
+            Bio. Say A few Words About Your Self</h3>
             <input
               type="text"
               name="bio"
               value="The fault in our dreams"
               required
-          /></label>
+          />
         </div>
 
         <div>
-          <label
-            >Profile Picture
-            <input
+          <h3>
+            Profile Picture</h3>
+            <input 
               type="file"
               name="profilePicture"
               accept="image/png, image/jpeg"
             />
-          </label>
+          
         </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Optional</legend>
-
+      
+</div></div >
+    </div>
+       
+        <div class="Optional">
+          <h2 class="opt">Optional</h2>
         <div>
-          religiousPreferences
-
-          <label>
+          <h3>religiousPreferences</h3>
             <input
               type="checkbox"
               name="religiousPreferences"
               value="catholic"
             />
             Catholic
-          </label>
 
-          <label>
+        
             <input
               type="checkbox"
               name="religiousPreferences"
               value="judaism"
             />
             Judaism
-          </label>
-          <label>
+        
             <input
               type="checkbox"
               name="religiousPreferences"
               value="musliim"
             />
             Muslim
-          </label>
-          <label>
+          <br>
             <input
               type="checkbox"
               name="religiousPreferences"
               value="orthodox"
             />
             Orthodox
-          </label>
-          <label>
+        
+        
             <input
               type="checkbox"
               name="religiousPreferences"
               value="protestant"
-            />
+            /> 
             Protestant
-          </label>
-          <label>
+          
             <input type="checkbox" name="religiousPreferences" value="other" />
             Other
-          </label>
+         
         </div>
 
         <div>
-          <label
-            >Your Height (in centimeters) <input type="number" name="height"
-          /></label>
+          <h3>
+            Your Height (in centimeters)</h3> <input type="number" name="height"
+          />
         </div>
 
         <div>
-          <p>height range</p>
+         
 
           <div>
-            <label
-              >Minimum height <input type="number" name="minHeight"
+            <h3>height range</h3>
+            <label>
+              Minimum height <input type="number" name="minHeight"
             /></label>
-          </div>
+          
 
-          <div>
-            <label
-              >Maximum height <input type="number" name="maxHeight"
+          
+            <label>
+              Maximum height <input type="number" name="maxHeight"
             /></label>
           </div>
         </div>
 
         <div>
-          <p>Age Range</p>
-
+          <h3>Age range</h3><div>
+          <label >Minimum Age</label>
           <input type="number" name="minAge" />
-          <label>Minimum Age </label>
+          
+        
 
-          <label
-            >Maximum Age
+          <label>
+            Maximum Age
             <input type="number" name="maxAge" />
-          </label>
+          </label></div>
         </div>
 
         <div>
-          <p>Hobbies</p>
-          <label>
+          <h3>Hobbies</h3>
+        
+         
+         
             <input type="checkbox" name="hobbies" value="movies" />
-            Movies
-          </label>
+            <label for="">Movies</label>
 
-          <label>
+          
             <input type="checkbox" name="hobbies" value="picnic-at-mars" />
-            picnic-at-mars
-          </label>
-          <label>
+            <label for="">Picnic at mars</label>
+          
+       
             <input type="checkbox" name="hobbies" value="the-office" />
-            the-office
-          </label>
-          <label>
+           <label for="">The Office</label>
+        
             <input type="checkbox" name="hobbies" value="jamaica" />
-            jamaica
-          </label>
-          <label>
+            <label for="">Jamaica</label>
+          
             <input type="checkbox" name="hobbies" value="chicken-cheese" />
-            chicken-cheese
-          </label>
-          <label>
+            <label for="Chicken cheese"></label>
+          
             <input type="checkbox" name="hobbies" value="counting-stars" />
-            counting-stars
-          </label>
+          <label for="">Counting stars</label>
         </div>
         <div>
-          <p>Your Education Level</p>
+         <h3>Your educational level</h3>
 
-          <label>
+         
             <input type="radio" name="educationLevel" value="10" required />
-            MiddleSchool
-          </label>
+           <label for="">Middle</label>
 
-          <label>
+        
             <input type="radio" name="educationLevel" value="20" required />
-            HighSchool
-          </label>
-          <label>
+            <label for="">High school</label>
+         
             <input type="radio" name="educationLevel" value="30" required />
-            University/College
-          </label>
-          <label>
+            <label for="">University/College</label>
+          
             <input type="radio" name="educationLevel" value="40" required />
-            Masters
-          </label>
-          <label>
+            <label for="">Masters</label>
+          
             <input type="radio" name="educationLevel" value="50" required />
-            Professor
-          </label>
-          <label>
+            <label for="">Professor</label>
+           
+      
             <input
               type="radio"
               name="educationLevel"
@@ -285,88 +276,79 @@
               required
               checked
             />
-            None
-          </label>
+            <label for="">None</label>
+          
         </div>
         <div>
-          <p>My partner should not be educated below..</p>
+          <h3>My partner should not be educated below..</h3>
 
-          <label>
+         
             <input
               type="radio"
               name="preferredEducationLevel"
               value="10"
               required
             />
-            MiddleSchool
-          </label>
-
-          <label>
+            <label for="">Middle school</label>
             <input
               type="radio"
               name="preferredEducationLevel"
               value="20"
               required
-            />
-            HighSchool
-          </label>
-          <label>
+            /> <label for="">High school</label>
+         
             <input
               type="radio"
               name="preferredEducationLevel"
               value="30"
               required
             />
-            University/College
-          </label>
-          <label>
+            <label for="">University/college</label>
+        
             <input
               type="radio"
               name="preferredEducationLevel"
               value="40"
               required
-            />
-            Masters
-          </label>
-          <label>
+            /> <label for="">Masters</label>
+         
             <input
               type="radio"
               name="preferredEducationLevel"
               value="50"
               required
-            />
-            Professor
-          </label>
-          <label>
+            /> <label for="">Professor</label>
+         
             <input
               type="radio"
               name="preferredEducationLevel"
               value=""
               required
               checked
-            />
-            I don't mind
-          </label>
+            /> <label for="">I don't mind</label>
+          
         </div>
 
         <div>
-          <p>Location</p>
-          <label>
-            Save My Location
+          <h3>Location</h3>
+          
             <input type="checkbox" name="" id="allow-location-check-box" />
-          </label>
+            <label for="">Save my location</label>
+          
 
-          <label>
-            Good if partner is within
+          <h4>
+            <label>
+            Good if partner is within</label>
             <input type="number" name="kmRadius" />
             kms
-          </label>
-        </div>
-      </fieldset>
-      <button>SAVE</button>
+          
+        </div></div>
+      
+      <div class="inner">
+      <button class="save">Save</button></div>
     </form>
 
-    <div>
+    <div class="inner">
       <button id="delete-account-btn">Delete Account?</button>
     </div>
   </body>
