@@ -5,6 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chats</title>
+    <style>
+      .card {
+        border-radius: 3rem;
+        box-shadow: 0 0 10px #b6b2b2;
+        padding: 2rem;
+        margin: 10vw 5vw;
+        background-color: white;
+      }
+      img {
+        border-radius: 2rem;
+      }
+      body {
+        background-color: rgb(243, 238, 238);
+      }
+      .unread {
+        background-color: pink;
+        color: black;
+      }
+      .link {
+        margin-top: 3rem;
+        background-color: green;
+        text-decoration: none;
+        padding: 0.5rem;
+        color: white;
+        border: 5px solid grey;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -52,11 +79,16 @@
         const { unreadCount, chatId } = chatInfo;
 
         this.div.innerHTML = `
-            <div>
+            <div class="card">
                 <h3>${firstName} + ${lastName}</h3>
                 <img src="${photoUrl}"/>
-                <p>Unread ${unreadCount}</p>
-                <a href="chats/${chatId}"> chat now</a>
+                <p> 
+                  <span class="unread">
+
+                    Unread ${unreadCount}
+                    </span>
+                  </p>
+                <a class="link" href="chats/${chatId}"> chat now</a>
             </div>
             `;
       }
