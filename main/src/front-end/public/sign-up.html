@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/8d2656f544.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Alex Brush|Almendra SC|Amita|Bree Serif' rel='stylesheet'>
     <title>Fill Profile | Fonka</title>
   </head>
   <style>
     body{
-    overflow-x: hidden;
-    background-color: #141432df;
-    margin:0px;
-    padding: 0px;
-    color:white;
-    margin: auto;
+      overflow-x: hidden;
+      background-color: #000;
+      margin:0px;
+      font-family: 'Bree Serif';
+      padding: 0px;
+      color:white;
+      margin: auto;
     }
     nav{
         background-color: black;
@@ -33,7 +35,38 @@
         font-size: larger;
     }
     h1{
-        margin: 15px;
+      color: pink;
+      font-family: 'Almendra SC';
+      margin: 15px;
+    }
+    .alert {
+      padding: 20px;
+      background-image: linear-gradient(to right bottom,#2196f3, rgb(13, 112, 148));
+      width: 25%;
+      color: white;
+      border-radius: 20px;
+      margin: 1% 5%;
+    }
+
+    .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+  .closebtn:hover {
+    color: black;
+    }
+    fieldset{
+      background-color: #333;
+      border: none;
+      border-radius: 10px;
+      margin: 3% 0;
     }
     h3{
         font-family: cursive;
@@ -42,9 +75,11 @@
         font-weight: 800;
     }
     legend{
-        font-weight: 800;
+        font-weight: 10px;
         font-size: larger;
-        color:blueviolet;
+        background-color:#fe0808;
+        /* border-radius: 10px; */
+        color: white;
     }
     p{
         font-size: large;
@@ -254,6 +289,18 @@
       max-width: 300px;
       border-radius: 20px;
     }
+    .signing-up{
+      border: none;
+      background-image: linear-gradient(to right bottom, rgb(255, 0, 242), orange);
+      border-radius: 10px;
+      width: 20%;
+      height: 40px;
+      margin: 0 40%;
+      margin-bottom: 8%;
+    }
+    .signing-up:hover{
+      color: white;
+    }
     @media only screen and (min-width: 800px) {
         .basic-info,.partner {
           width: 70%;
@@ -272,12 +319,19 @@
     </nav>
     <header>
       <h1>Fill out profile</h1>
-      <p>
+      <!-- <p>
         One more step before you enjoy Spark!
         <br />
         We need this to give you good partner suggestions.
-      </p>
+      </p> -->
     </header>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <strong>One more step before you enjoy Spark!</strong>
+        <br />
+        We need this to give you good partner suggestions.
+      
+    </div>
 
     <form id="edit-form">
       <fieldset>
@@ -827,7 +881,7 @@
           </label>
         </div>
       </fieldset>
-      <button>SIGN UP!</button>
+      <button class="signing-up">SIGN UP</button>
     </form>
   </body>
 
