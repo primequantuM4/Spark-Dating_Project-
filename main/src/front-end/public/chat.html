@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Alex Brush|Almendra SC|Amita|Bree Serif' rel='stylesheet'>
     <title>chat</title>
 
     <style>
       #message-container {
         display: flex;
         flex-direction: column;
-        max-width: 500px;
+        width: 50%;
+        margin-top: 25%;
+        margin-bottom: 10%;
+        position: relative;
+        right: 150px;
       }
       .mine {
-        background-color: pink;
+        background-image: linear-gradient(to right bottom, #05eb97, rgb(2, 245, 2));
+        color: white;
         align-self: end;
         width: 75%;
         padding: 10px;
@@ -25,12 +31,12 @@
       .mine,
       .other {
         margin: 5px 0;
-        box-shadow: 0 0 10px rgb(208, 208, 208);
+        box-shadow: 0 0 10px #333;
       }
 
       .other {
-        background-color: lightblue;
-        align-self: start;
+        background-image: linear-gradient(to right bottom, rgb(5, 188, 254), #2196f3);
+        align-self: end;
         width: 75%;
         padding: 10px;
         border-top-left-radius: 10px;
@@ -39,54 +45,71 @@
       }
 
       #profile-pic {
-        width: 15vw;
-        height: 15vw;
+        width: 5vw;
+        height: 5vw;
         object-fit: cover;
         border-radius: 100%;
         border: 5px solid black;
       }
 
       .chat-header {
+        z-index: 3;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        background-color: white;
-        border-radius: 5px;
+        font-family: 'Alex Brush';
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        color: pink;
+        width: 100%;
         height: 5vw;
-        box-shadow: 0 0 5px rgb(243, 238, 238);
-        margin: 10vw 0;
+        margin: 0;
+        padding: 1%;
       }
-
+      .pictorial-info a{
+        position: absolute;
+      }
+      .pictorial-info img{
+        position: absolute;
+        left: 7%;
+      }
+      .text-info{
+        font-size: 2rem;
+      }
       body {
-        background-color: rgb(243, 238, 238);
+        background-color: #111;
       }
 
       input {
         padding: 0.3rem;
-        border-radius: 8px;
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        /* border-radius: 8px; */
+        color: white;
+        background-color: #333;
         border: 1px solid black;
-        width: 75%;
-        margin-top: 1rem;
+        width: 100%;
+        height: 4rem;
+        /* margin-top: 1rem; */
       }
     </style>
   </head>
   <body>
-    <nav>
-      <a href="/home.html">home</a>
-
-      <a href="/chats.html">chats</a>
-      <a href="/edit-profile.html">edit profile</a>
-      <a href="/matching.html">matching</a>
-    </nav>
-
     <div class="chat-header">
+      <div class="pictorial-info">
+      <a href="/chats.html" style="text-decoration: none; font-size: 4rem;"> &#8592; </a>
       <img id="profile-pic" src="" alt="profilepic" />
-      <p id="name-slot">--name--</p>
+      </div>
+      <div class="text-info">
+        <p id="name-slot">--name--</p>
+      </div>
       <div></div>
     </div>
     <div id="message-container"></div>
     <div>
-      <input id="message-input" type="text" placeholder="message " />
+      <input id="message-input" type="text" placeholder="Write a message..." />
     </div>
 
     <script>
