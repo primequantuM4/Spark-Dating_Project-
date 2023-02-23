@@ -11,6 +11,21 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-default">
+    <div class="nav-wrapper">
+      <div class="nav-header">
+        <a class="sparkLogo" href="home.html">Spark</a>
+      </div>
+      <div class="nav-content">
+        <ul>
+          <li><a href="chats.html">Chats</a></li>
+          <li><a href="matching.html">Matching</a></li>
+          <li><a class="active" href="edit-profile.html">Edit Profile</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <main>
     <style>
       body {
@@ -366,6 +381,92 @@
 
       }
 
+      .sparkLogo {
+        float: left;
+        background-image: linear-gradient(to right, pink, red, pink);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+
+        animation-name: bg-moving;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes bg-moving {
+        0% {
+          background-position: 0;
+        }
+
+        50% {
+          background-position: 10vw;
+        }
+
+        100% {
+          background-position: 0vw;
+        }
+      }
+
+      ul {
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      li {
+        padding: 14px 16px 6px;
+
+      }
+
+      li a {
+        display: block;
+        padding: 0px 0px 3px;
+        color: aliceblue;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      /* Change the link color to #111 (black) on hover */
+      li:hover {
+        background-color: #111;
+      }
+
+      .active {
+        border-bottom: 4px solid #eab8fa;
+        border-radius: 3%;
+      }
+
+      .nav-wrapper {
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-header {
+        display: flex;
+        font-size: 1.6rem;
+      }
+
+      .nav-content {
+        display: flex;
+      }
+
+      nav {
+        margin-bottom: 30px;
+        background-color: #1d1d1d;
+        padding: 0px 50px;
+        height: 4%;
+      }
+
       @media only screen and (min-width: 800px) {
 
         .basic-info,
@@ -374,14 +475,14 @@
         }
       }
     </style>
-    <nav>
+    <!-- <nav>
       <a href="/home.html">home</a>
 
       <a href="/chats.html">chats</a>
       <a href="/edit-profile.html">edit profile</a>
       <a href="/matching.html">matching</a>
       <a href="/logout.html">logout</a>
-    </nav>
+    </nav> -->
 
     <header>
       <h1>Edit your profile</h1>
