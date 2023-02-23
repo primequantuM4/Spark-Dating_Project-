@@ -7,7 +7,7 @@ class userCard {
         <div class="user-card__location my-2 mt-3">Age ${age}</div>
         <div class="user-card__religion my-2">Religion: ${religion}</div>
         <div class="user-card__hobbys my-2">Bio: ${bio}</div>
-        <div class="align-self-start w-100 mt-3 d-flex flex-row">
+        <div class="align-self-start w-100 mt-3 d-flex flex-row buttonse">
             <button class="btn w-50 m-1" id="likeButton">&#10084;</button>
             <button class="btn w-50 m-1" id="hateButton">&#10005;</button>
             </div>
