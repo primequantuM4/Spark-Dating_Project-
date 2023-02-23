@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://fonts.googleapis.com/css?family=Alex Brush|Almendra SC|Amita|Bree Serif' rel='stylesheet'>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <script src="bootstrap/js/bootstrap.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     <title>chat</title>
 
     <style>
@@ -18,7 +21,8 @@
         right: 150px;
       }
       .mine {
-        background-image: linear-gradient(to right bottom, #05eb97, rgb(2, 245, 2));
+        background-color: #02628e;
+        /* background-image: linear-gradient(to right bottom, #05eb97, rgb(2, 245, 2)); */
         color: white;
         align-self: end;
         width: 75%;
@@ -35,7 +39,7 @@
       }
 
       .other {
-        background-image: linear-gradient(to right bottom, rgb(5, 188, 254), #2196f3);
+        background-color: #efefef;
         align-self: end;
         width: 75%;
         padding: 10px;
@@ -56,19 +60,25 @@
         z-index: 3;
         display: flex;
         justify-content: space-between;
-        font-family: 'Alex Brush';
+
+        letter-spacing: 0.2px;
         position: fixed;
         top: 0;
         left: 0;
         background-color: black;
-        color: pink;
+        color: white;
         width: 100%;
         height: 5vw;
         margin: 0;
         padding: 1%;
+
       }
       .pictorial-info a{
         position: absolute;
+        color: white;
+      }
+      .pictorial-info a:hover{
+        background-color: #7a7777;
       }
       .pictorial-info img{
         position: absolute;
@@ -99,7 +109,7 @@
   <body>
     <div class="chat-header">
       <div class="pictorial-info">
-      <a href="/chats.html" style="text-decoration: none; font-size: 4rem;"> &#8592; </a>
+      <a href="/chats.html" style="text-decoration: none; font-size: 2rem;"> &#8592; </a>
       <img id="profile-pic" src="" alt="profilepic" />
       </div>
       <div class="text-info">
