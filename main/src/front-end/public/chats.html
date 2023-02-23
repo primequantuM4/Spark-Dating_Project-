@@ -21,9 +21,8 @@
       border-radius: 2rem;
       width: 260px;
       height: 200px;
+      margin: 4px;
       object-fit: cover;
-      margin: 5px;
-      width: 100%;
     }
 
     body {
@@ -99,9 +98,7 @@
 
       this.div.innerHTML = `
             <div class="card text-white bg-dark mb-3 w-75 d-flex flex-row text-center align-items-start">
-                <div class="col-sm-3">
-                <img class="img-fluid" src="${photoUrl}"/>
-                </div>
+                <img src="${photoUrl}"/>
                 <div class="card-body col-sm-8">
                 <h3 class="card-title m-2">${firstName} ${lastName}</h3>
                 <div class="card-text">
