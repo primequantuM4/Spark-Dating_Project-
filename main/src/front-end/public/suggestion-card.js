@@ -1,12 +1,13 @@
 class userCard {
   constructor({ id, firstName, lastName, age, religion, bio, photoUrl }) {
-    this.html = `<div class="card bg-dark text-white d-flex flex-column p-3 justify-content-between">
-        <img class="card-img-top" src="${photoUrl}" alt="" width=260 height=200>
-        <div class="title mb-2">${firstName} ${lastName}</div>
-        <div class="user-card__location mb-1">Age ${age}</div>
-        <div class="user-card__religion mb-1">Religion: ${religion}</div>
-        <div class="user-card__hobbys mb-1">Bio: ${bio}</div>
-        <div class="mt-3 d-flex flex-row">
+    this.html = `<div class="card d-flex flex-column p-3 justify-content-between align-items-center">
+        <img class="card-img-top m-0" src="${photoUrl}" alt="" width=260 height=200>
+        <div class="title mb-0 mt-5 py-0">${firstName} ${lastName}</div>
+        <hr class="m-0 w-100">
+        <div class="user-card__location my-2 mt-3">Age ${age}</div>
+        <div class="user-card__religion my-2">Religion: ${religion}</div>
+        <div class="user-card__hobbys my-2">Bio: ${bio}</div>
+        <div class="align-self-start w-100 mt-3 d-flex flex-row">
             <button class="btn w-50 m-1" id="likeButton">&#10084;</button>
             <button class="btn w-50 m-1" id="hateButton">&#10005;</button>
             </div>
