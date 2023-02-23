@@ -5,10 +5,36 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href='https://fonts.googleapis.com/css?family=Alex Brush|Almendra SC|Amita|Bree Serif' rel='stylesheet'>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
   <script type="module" src="bootstrap/js/bootstrap.js"></script>
   <title>Chats</title>
   <style>
+    body {
+      overflow-x: hidden;
+      background-color: #000;
+      margin: 0px;
+      font-family: 'Bree Serif';
+      padding: 0px;
+      color: white;
+      margin: auto;
+    }
+
+    nav {
+      background-color: black;
+      display: flex;
+      justify-content: end;
+      flex-wrap: wrap;
+      height: 10vh;
+    }
+
+    nav a {
+      font-size: larger;
+      color: #ddd;
+      text-decoration: none;
+      padding: 10px;
+    }
+
     .card {
       color: aliceblue;
       border-radius: 1rem;
@@ -52,17 +78,109 @@
       background: #ff469d;
       text-shadow: 1px 1px 4px black;
     }
+
+    .sparkLogo {
+      float: left;
+      background-image: linear-gradient(to right, pink, red, pink);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      animation-name: bg-moving;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes bg-moving {
+      0% {
+        background-position: 0;
+      }
+
+      50% {
+        background-position: 10vw;
+      }
+
+      100% {
+        background-position: 0vw;
+      }
+    }
+
+    ul {
+      width: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 5px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    li {
+      padding: 14px 16px 6px;
+
+    }
+
+    li a {
+      display: block;
+      padding: 0px 0px 3px;
+      color: aliceblue;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li:hover {
+      background-color: #111;
+    }
+
+    .active {
+      border-bottom: 4px solid #eab8fa;
+      border-radius: 3%;
+    }
+
+    .nav-wrapper {
+      margin-right: auto;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav_header {
+      display: flex;
+      font-size: 1.6rem;
+    }
+
+    .nav_content {
+      display: flex;
+    }
+
+    nav {
+      margin-bottom: 30px;
+      background-color: #1d1d1d;
+      height: 4%;
+    }
   </style>
 </head>
 
 <body>
-  <nav>
-    <a href="/home.html">home</a>
-
-    <a href="/chats.html">chats</a>
-    <a href="/edit-profile.html">edit profile</a>
-    <a href="/matching.html">matching</a>
-    <a href="/logout.html">logout</a>
+  <nav class="container-fluid px-5">
+    <div class="nav-wrapper">
+      <div class="nav_header">
+        <a class="sparkLogo" href="home.html">Spark</a>
+      </div>
+      <div class="nav_content">
+        <ul>
+          <li><a class="active" href="chats.html">Chats</a></li>
+          <li><a href="matching.html">Matching</a></li>
+          <li><a href="edit-profile.html">Edit Profile</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
   <div id="chat-cards"></div>
 </body>
