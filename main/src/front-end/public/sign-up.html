@@ -1,318 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
-    <script src="https://kit.fontawesome.com/8d2656f544.js" crossorigin="anonymous"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Alex Brush|Almendra SC|Amita|Bree Serif' rel='stylesheet'>
-    <title>Fill Profile | Fonka</title>
-  </head>
-  <style>
-    body{
-      overflow-x: hidden;
-      background-color: #000;
-      margin:0px;
-      font-family: 'Bree Serif';
-      padding: 0px;
-      color:white;
-      margin: auto;
-    }
-    nav{
-        background-color: black;
-        display: flex;
-        justify-content: end;
-        flex-wrap: wrap;
-        height: 10vh;
-    }
-    nav a{
-        font-size: larger;
-        color: #ddd;
-        text-decoration: none;
-        padding:10px;
-    }
-    header{
-        font-size: larger;
-    }
-    h1{
-      color: pink;
-      font-family: 'Almendra SC';
-      margin: 15px;
-    }
-    .alert {
-      padding: 20px;
-      background-image: linear-gradient(to right bottom,#2196f3, rgb(13, 112, 148));
-      width: 25%;
-      color: white;
-      border-radius: 20px;
-      margin: 1% 5%;
-    }
 
-    .closebtn {
-      margin-left: 15px;
-      color: white;
-      font-weight: bold;
-      float: right;
-      font-size: 22px;
-      line-height: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/8d2656f544.js" crossorigin="anonymous"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Alex Brush|Almendra SC|Amita|Bree Serif' rel='stylesheet'>
+  <title>Fill Profile | Fonka</title>
+</head>
+<style>
+  body {
+    overflow-x: hidden;
+    background-color: #000;
+    margin: 0px;
+    font-family: 'Bree Serif';
+    padding: 0px;
+    color: white;
+    margin: auto;
+  }
+
+  nav {
+    background-color: black;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    height: 10vh;
+  }
+
+  nav a {
+    font-size: larger;
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  header {
+    font-size: larger;
+  }
+
+  h1 {
+    color: pink;
+    font-family: 'Almendra SC';
+    margin: 15px;
+  }
+
+  .alert {
+    padding: 20px;
+    background-image: linear-gradient(to right bottom, #2196f3, rgb(13, 112, 148));
+    width: 25%;
+    color: white;
+    border-radius: 20px;
+    margin: 1% 5%;
+  }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
   .closebtn:hover {
     color: black;
-    }
-    fieldset{
-      background-color: #333;
-      border: none;
-      border-radius: 10px;
-      margin: 3% 0;
-    }
-    h3{
-        font-family: cursive;
-    }
-    label{
-        font-weight: 800;
-    }
-    legend{
-        font-weight: 10px;
-        font-size: larger;
-        background-color:#fe0808;
-        /* border-radius: 10px; */
-        color: white;
-    }
-    p{
-        font-size: large;
-        font-weight: bold;
-        background: gray;
-        width: fit-content;
-        padding:10px;
-        border-radius: 10px;
-    }
-    .account-related{
-        margin:10px;
-        padding:10px;
-        border:0px;
-        display: flex;
-        height: 100px;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    input[type="email"],
-     input[type="password"],
-     input[type="text"]{
-      border-radius: 5px;
-      width: 12rem;
-      height: 2rem;
-      -webkit-transition: all 0.30s ease-in-out;
-      -moz-transition: all 0.30s ease-in-out;
-      -ms-transition: all 0.30s ease-in-out;
-      -o-transition: all 0.30s ease-in-out;
-      outline: none;
-      margin: 1% 2%;
+  }
+
+  fieldset {
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    margin: 3% 0;
+  }
+
+  h3 {
+    font-family: cursive;
+  }
+
+  label {
+    font-weight: 800;
+  }
+
+  legend {
+    font-weight: 10px;
+    font-size: larger;
+    background-color: #fe0808;
+    /* border-radius: 10px; */
+    color: white;
+  }
+
+  p {
+    font-size: large;
+    font-weight: bold;
+    background: gray;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .account-related {
+    margin: 10px;
+    padding: 10px;
+    border: 0px;
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    border-radius: 5px;
+    width: 12rem;
+    height: 2rem;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    margin: 1% 2%;
 
 
-    }
-    input[type="password"]:focus,
-     input[type="email"]:focus,
-     input[type="text"]:focus,
-      textarea:focus {
-      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-      padding: 3px 0px 3px 3px;
-      margin: 1% 1%;
-      border: 1px solid rgba(81, 203, 238, 1);
-    }
-    .partner{
-        display: flex;
-        /*width: 70%;*/
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap:15px;
-    }
-    .partner input{
-        width:50px;
-    }
+  }
 
-    .basic-info{
-        /*width:70%;*/
-        padding:10px;
-        border:0px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        height: 100%;  
-    }
-    .basic-info div , .partner div{
-        margin-bottom: 30px;
-    }
-    .upload-photo{
-        width: 200px;
-        min-height: 40vh;
-        border:solid 3px;
-        border-radius: 30px;
-        display:grid;
-        justify-items: center;
-        align-items: center;
-    }
-    .upload-photo input{
-        display: none;
-    }
-    .optional{
-        border:0px;
-        display: flex;
-        flex-direction: column;
-        gap:10px;   
-    }
-    .radio label{
-        display: block;
-        padding-left:40px;
-        padding-top:15px;
-        padding-bottom:15px;
-        background-color: #1d1d42;
-        border:2px solid rgba(255,255,255,0.1);
-        border-radius: 8px;
-        position:relative;
-        cursor: pointer;
-        font-size: medium;
-        width:250px;
-        white-space: nowrap;
-    }
-    .radio label input[type=radio]{
-        display: none;
-    }
-    .optional input[type=radio]{
-        display: none;
-    }
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="text"]:focus,
+  textarea:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 1% 1%;
+    border: 1px solid rgba(81, 203, 238, 1);
+  }
 
+  .partner {
+    display: flex;
+    /*width: 70%;*/
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
 
-    .radio span{
-        height: 20px;
-        width: 20px;
-        border-radius: 50%;
-        position: absolute;
-        border: solid 1px #524eee;
-        left:10px;
-        top:10px;
-        display: block;
-    }
-    .radio span:after{
-        content: " ";
-        background:#524eee;
-        width: 10px;
-        height: 10px;
-        display: block;
-        position: absolute;
-        left: 50%;
-        top:50%;
-        transform: translate(-50%,-50%) scale(0);
-        border-radius: 50%;
-        transition: 300ms ease-in-out 0s;
-    }
-    .radio input[type=radio]:checked~span:after{
-        transform: translate(-50%,-50%) scale(1);
-    }
+  .partner input {
+    width: 50px;
+  }
 
-    .container{
-        width:100px;
-        height: 70px;
-        display:flex;
-        flex-direction: column;
-        color:black;
-        background-color:antiquewhite;
-        align-items: center;
-        justify-content: center;
-        border:2px solid #ddd;
-        box-shadow:5px 15px 20px 4px rgba(0,0,0,0.4);
-        margin:20px;
-        cursor: pointer;
-        border-radius: 10px;
-        user-select: none;
-        overflow: hidden;
-        
-    }
-    .religiousPreference label{
-        display:block;
-        background-image: linear-gradient(to right bottom, rgb(255, 0, 242), rgb(245, 154, 154));
-        border:none;
-        margin: 15px;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    .Hobbies label:before{
-        content:'';
-        background-color: antiquewhite;
-    }
-    .Hobbies .container:hover{
-        background-color:gray;
-    }
-    .Hobbies label input[type="checkbox"]:checked~.container{
-        border:blueviolet 5px solid;
-        color:blueviolet;
-        font-weight: bold;
-    }
-    .Hobbies input[type="checkbox"]{
-        display:none;
-    }
-    .Hobbies iconify-icon{
-        font-size: 25px;
-    }
-    .list{
-        display:flex;
-        flex-wrap: wrap;
-        margin: 10px;
-        box-shadow: 0px 4px 5px 6px rgba(0,0,0,0.2);
-    }
-    .btn{
-        background-color: black;
-        color: white;
-        border-radius: 20px;
-        padding:10px;
-        font-size: 20px;
-    }
-    .btn:hover{
-        font-size: 25px;
-    }
-    #delete-account-btn{
-        background-color: red;
-        color: white;
-        border-radius: 20px;
-        padding:10px;
-        font-size: 20px;
-        margin-top: 10px;
-    }
-    #delete-account-btn:hover{
-        background-color: black;
-        color: red;
-    }
-    .bio input[type=text ]{
-      height: 50px;
-      max-width: 300px;
-      border-radius: 20px;
-    }
-    .signing-up{
-      border: none;
-      background-image: linear-gradient(to right bottom, rgb(255, 0, 242), orange);
-      border-radius: 10px;
-      width: 20%;
-      height: 40px;
-      margin: 0 40%;
-      margin-bottom: 8%;
-    }
-    .signing-up:hover{
-      color: white;
-    }
-    @media only screen and (min-width: 800px) {
-        .basic-info,.partner {
-          width: 70%;
-        }
-      }
+  .basic-info {
+    /*width:70%;*/
+    padding: 10px;
+    border: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .basic-info div,
+  .partner div {
+    margin-bottom: 30px;
+  }
+
+  .upload-photo {
+    width: 200px;
+    min-height: 40vh;
+    border: solid 3px;
+    border-radius: 30px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .upload-photo input {
+    display: none;
+  }
+
+  .optional {
+    border: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .radio label {
+    display: block;
+    padding-left: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #1d1d42;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    font-size: medium;
+    width: 250px;
+    white-space: nowrap;
+  }
+
+  .radio label input[type=radio] {
+    display: none;
+  }
+
+  .optional input[type=radio] {
+    display: none;
+  }
 
 
+  .radio span {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    border: solid 1px #524eee;
+    left: 10px;
+    top: 10px;
+    display: block;
+  }
 
-  
-  </style>
-  <body>
+  .radio span:after {
+    content: " ";
+    background: #524eee;
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: 300ms ease-in-out 0s;
+  }
+
+  .radio input[type=radio]:checked~span:after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .container {
+    width: 100px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    background-color: antiquewhite;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd;
+    box-shadow: 5px 15px 20px 4px rgba(0, 0, 0, 0.4);
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+    overflow: hidden;
+
+  }
+
+  .religiousPreference label {
+    display: block;
+    background-image: linear-gradient(to right bottom, rgb(255, 0, 242), rgb(245, 154, 154));
+    border: none;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .Hobbies label:before {
+    content: '';
+    background-color: antiquewhite;
+  }
+
+  .Hobbies .container:hover {
+    background-color: gray;
+  }
+
+  .Hobbies label input[type="checkbox"]:checked~.container {
+    border: blueviolet 5px solid;
+    color: blueviolet;
+    font-weight: bold;
+  }
+
+  .Hobbies input[type="checkbox"] {
+    display: none;
+  }
+
+  .Hobbies iconify-icon {
+    font-size: 25px;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    box-shadow: 0px 4px 5px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .btn:hover {
+    font-size: 25px;
+  }
+
+  #delete-account-btn {
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  #delete-account-btn:hover {
+    background-color: black;
+    color: red;
+  }
+
+  .bio input[type=text] {
+    height: 50px;
+    max-width: 300px;
+    border-radius: 20px;
+  }
+
+  .signing-up {
+    border: none;
+    background-image: linear-gradient(to right bottom, rgb(255, 0, 242), orange);
+    border-radius: 10px;
+    width: 20%;
+    height: 40px;
+    margin: 0 40%;
+    margin-bottom: 8%;
+  }
+
+  .signing-up:hover {
+    color: white;
+  }
+
+  main {
+    width: 65%;
+    margin: 0 auto;
+
+  }
+
+  @media only screen and (min-width: 800px) {
+
+    .basic-info,
+    .partner {
+      width: 70%;
+    }
+  }
+</style>
+
+<body>
+  <main>
     <nav>
       <a href="/home.html">home</a>
       <a href="/sign-up.html">signup</a>
@@ -327,27 +374,23 @@
       </p> -->
     </header>
     <div class="alert">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       <strong>One more step before you enjoy Spark!</strong>
-        <br />
-        We need this to give you good partner suggestions.
-      
+      <br />
+      We need this to give you good partner suggestions.
+
     </div>
 
     <form id="edit-form">
       <fieldset>
         <legend>Account Related</legend>
         <div>
-          <label
-            >Email
-            <input type="email" name="email" value="abebe@gmail.com" required
-          /></label>
+          <label>Email
+            <input type="email" name="email" value="abebe@gmail.com" required /></label>
         </div>
         <div>
-          <label
-            >Password
-            <input type="password" name="password" value="abebe" required
-          /></label>
+          <label>Password
+            <input type="password" name="password" value="abebe" required /></label>
         </div>
       </fieldset>
 
@@ -355,42 +398,28 @@
         <legend>Basic Info</legend>
 
         <div>
-          <label
-            >* First Name
-            <input type="text" name="firstName" value="Abebe" required
-          /></label>
+          <label>* First Name
+            <input type="text" name="firstName" value="Abebe" required /></label>
         </div>
 
         <div>
-          <label
-            >* Father's Name
-            <input type="text" name="lastName" value="Kebede" required
-          /></label>
+          <label>* Father's Name
+            <input type="text" name="lastName" value="Kebede" required /></label>
         </div>
 
         <div>
           <p>* Sex</p>
 
-          <label
-            >Male <input type="radio" name="sex" value="male" checked required
-          /></label>
+          <label>Male <input type="radio" name="sex" value="male" checked required /></label>
 
-          <label
-            >Female <input type="radio" name="sex" value="female" required
-          /></label>
+          <label>Female <input type="radio" name="sex" value="female" required /></label>
         </div>
 
         <div>
           * Religion
 
           <label>
-            <input
-              type="radio"
-              name="religion"
-              value="catholic"
-              required
-              checked
-            />
+            <input type="radio" name="religion" value="catholic" required checked />
             Catholic
           </label>
 
@@ -417,33 +446,19 @@
         </div>
 
         <div>
-          <label
-            >* Birthday
-            <input type="date" name="birthday" value="2000-01-01" required
-          /></label>
+          <label>* Birthday
+            <input type="date" name="birthday" value="2000-01-01" required /></label>
         </div>
 
         <div>
-          <label
-            >* Bio. Say A few Words About Your Self
-            <input
-              type="text"
-              name="bio"
-              value="The fault in our dreams"
-              required
-          /></label>
+          <label>* Bio. Say A few Words About Your Self
+            <input type="text" name="bio" value="The fault in our dreams" required /></label>
         </div>
 
         <div class="upload-photo">
-          <label id="label"
-            >Profile Picture
-            <input
-              type="file"
-              name="profilePicture"
-              accept="image/png, image/jpeg"
-              required
-              onchange="preview_image(event)"
-            />
+          <label id="label">Profile Picture
+            <input type="file" name="profilePicture" accept="image/png, image/jpeg" required
+              onchange="preview_image(event)" />
           </label>
           <img id="output_image">
         </div>
@@ -451,315 +466,288 @@
 
       <fieldset class="optional">
         <legend>Optional</legend>
-      <div class="partner">
-        <div>
-          <div class="religiousPreference">
-            religiousPreferences
-  
-            <label>
-              <input
-                type="checkbox"
-                name="religiousPreferences"
-                value="catholic"
-              />
-              Catholic
-              <span></span>
-            </label>
-  
-            <label>
-              <input
-                type="checkbox"
-                name="religiousPreferences"
-                value="judaism"
-              />
-              Judaism
-              <span></span>
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="religiousPreferences"
-                value="musliim"
-              />
-              Muslim
-              <span></span>
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="religiousPreferences"
-                value="orthodox"
-              />
-              Orthodox
-              <span></span>
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="religiousPreferences"
-                value="protestant"
-              />
-              Protestant
-              <span></span>
-            </label>
-            <label>
-              <input type="checkbox" name="religiousPreferences" value="other" />
-              Other
-              <span></span>
-            </label>
-          </div>
-        </div>
+        <div class="partner">
+          <div>
+            <div class="religiousPreference">
+              religiousPreferences
 
-        
-        <div>
-          <div>
-            <label
-              >Your Height (in centimeters)
-              <input type="number" name="height" value="150"
-            /></label>
-          </div>
-  
-          <div>
-            <p>height range</p>
-  
-            <div>
-              <label
-                >Minimum height <input type="number" name="minHeight" value="100"
-              /></label>
+              <label>
+                <input type="checkbox" name="religiousPreferences" value="catholic" />
+                Catholic
+                <span></span>
+              </label>
+
+              <label>
+                <input type="checkbox" name="religiousPreferences" value="judaism" />
+                Judaism
+                <span></span>
+              </label>
+              <label>
+                <input type="checkbox" name="religiousPreferences" value="musliim" />
+                Muslim
+                <span></span>
+              </label>
+              <label>
+                <input type="checkbox" name="religiousPreferences" value="orthodox" />
+                Orthodox
+                <span></span>
+              </label>
+              <label>
+                <input type="checkbox" name="religiousPreferences" value="protestant" />
+                Protestant
+                <span></span>
+              </label>
+              <label>
+                <input type="checkbox" name="religiousPreferences" value="other" />
+                Other
+                <span></span>
+              </label>
             </div>
-  
-            <div>
-              <label
-                >Maximum height <input type="number" name="maxHeight" value="200"
-              /></label>
-            </div>
           </div>
-  
+
+
           <div>
-            <p>Age Range</p>
-            <label>Minimum Age
-            <input type="number" name="minAge" value="18" />
-            <label
-              >Maximum Age
-              <input type="number" name="maxAge" value="30" />
-            </label>
+            <div>
+              <label>Your Height (in centimeters)
+                <input type="number" name="height" value="150" /></label>
+            </div>
+
+            <div>
+              <p>height range</p>
+
+              <div>
+                <label>Minimum height <input type="number" name="minHeight" value="100" /></label>
+              </div>
+
+              <div>
+                <label>Maximum height <input type="number" name="maxHeight" value="200" /></label>
+              </div>
+            </div>
+
+            <div>
+              <p>Age Range</p>
+              <label>Minimum Age
+                <input type="number" name="minAge" value="18" />
+                <label>Maximum Age
+                  <input type="number" name="maxAge" value="30" />
+                </label>
+            </div>
           </div>
         </div>
-      </div>
 
 
         <div class="Hobbies">
           <div class="outdoor activities"></div>
           <p>Hobbies</p>
           <h3>outdoor activities</h3>
-            <div  class="list">
-                <label>
-                    <input type="checkbox" name="hobbies" value="traveling" />
-                    <div class="container">
-                      <div><i class="fa-solid fa-suitcase-rolling"></i></div>
-                      <div class="title">traveling</div>
-                    </div>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="hobbies" value="partying" />
-                    <div class="container">
-                      <div><i class="fa-solid fa-champagne-glasses"></i></div>
-                      <div class="title">partying</div>
-                    </div>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="hobbies" value="events" />
-                    <div class="container">
-                      <div><i class="fa-solid fa-calendar-days"></i></div>
-                      <div class="title">events</div>
-                    </div>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="hobbies" value="fishing" />
-                    <div class="container">
-                      <div><i class="fa-solid fa-fish"></i></div>
-                      <div class="title">fishing</div>
-                    </div>
-                  </label>
-            </div>
-          
+          <div class="list">
+            <label>
+              <input type="checkbox" name="hobbies" value="traveling" />
+              <div class="container">
+                <div><i class="fa-solid fa-suitcase-rolling"></i></div>
+                <div class="title">traveling</div>
+              </div>
+            </label>
+            <label>
+              <input type="checkbox" name="hobbies" value="partying" />
+              <div class="container">
+                <div><i class="fa-solid fa-champagne-glasses"></i></div>
+                <div class="title">partying</div>
+              </div>
+            </label>
+            <label>
+              <input type="checkbox" name="hobbies" value="events" />
+              <div class="container">
+                <div><i class="fa-solid fa-calendar-days"></i></div>
+                <div class="title">events</div>
+              </div>
+            </label>
+            <label>
+              <input type="checkbox" name="hobbies" value="fishing" />
+              <div class="container">
+                <div><i class="fa-solid fa-fish"></i></div>
+                <div class="title">fishing</div>
+              </div>
+            </label>
+          </div>
+
           <div class="indoor activities">
             <h3>indoor activities</h3>
-            <div  class="list">
-                <label >
-                    <input type="checkbox" name="hobbies" value="cooking" />
-                    <div class="container">
-                      <div><i class="fa-solid fa-utensils"></i></div>
-                      <div class="title">cooking</div>
-                    </div>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="hobbies" value="video-games" />
-                    <div class="container">
-                      <div><iconify-icon class="icon" icon="twemoji:video-game"></iconify-icon></div>
-                      <div class="title">video-games</div>
-                    </div>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="hobbies" value="reading" />
-                    <div class="container">
-                      <div><iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon></div>
-                      <div class="title">reading</div>
-                    </div>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="hobbies" value="writing" />
-                    <div class="container">
-                      <div><iconify-icon icon="openmoji:writing-hand-light-skin-tone"></iconify-icon></div>
-                      <div class="title">writing</div>
-                    </div>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="hobbies" value="gardening" />
-                    <div class="container">
-                      <div><iconify-icon icon="maki:garden-centre"></iconify-icon></div>
-                      <div class="title">gardening</div>
-                    </div>
-                  </label>  
+            <div class="list">
+              <label>
+                <input type="checkbox" name="hobbies" value="cooking" />
+                <div class="container">
+                  <div><i class="fa-solid fa-utensils"></i></div>
+                  <div class="title">cooking</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="video-games" />
+                <div class="container">
+                  <div><iconify-icon class="icon" icon="twemoji:video-game"></iconify-icon></div>
+                  <div class="title">video-games</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="reading" />
+                <div class="container">
+                  <div><iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon></div>
+                  <div class="title">reading</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="writing" />
+                <div class="container">
+                  <div><iconify-icon icon="openmoji:writing-hand-light-skin-tone"></iconify-icon></div>
+                  <div class="title">writing</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="gardening" />
+                <div class="container">
+                  <div><iconify-icon icon="maki:garden-centre"></iconify-icon></div>
+                  <div class="title">gardening</div>
+                </div>
+              </label>
             </div>
           </div>
-            <div class="movies and music">
-              <h3>movies and music</h3>
-                <div  class="list">
-                    <label>
-                        <input type="checkbox" name="hobbies" value="drama" />
-                        <div class="container">
-                          <div><iconify-icon icon="mdi:drama-masks"></iconify-icon></div>
-                          <div class="title">drama</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="horror" />
-                        <div class="container">
-                          <div><iconify-icon icon="emojione-monotone:face-screaming-in-fear"></iconify-icon></div>
-                          <div class="title">horror</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="romance" />
-                        <div class="container">
-                          <div><iconify-icon icon="icon-park-outline:oval-love-two"></iconify-icon></div>
-                          <div class="title">romance</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="comedy" />
-                        <div class="container">
-                          <div><iconify-icon icon="fluent:emoji-laugh-24-regular"></iconify-icon></div>
-                          <div class="title">comedy</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="pop-music" />
-                        <div class="container">
-                          <div><iconify-icon icon="noto-v1:guitar"></iconify-icon></div>
-                          <div class="title">pop-music</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="country-music" />
-                        <div class="container">
-                          <div><iconify-icon icon="material-symbols:music-video-rounded"></iconify-icon></div>
-                          <div class="title">country-music</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="rock n roll" />
-                        <div class="container">
-                          <div><iconify-icon icon="mingcute:finger-rock-line"></iconify-icon></div>
-                          <div class="title">rock n roll</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="jazz" />
-                        <div class="container">
-                          <div><iconify-icon icon="noto:trumpet"></iconify-icon></div>
-                          <div class="title">jazz</div>
-                        </div>
-                      </label>
+          <div class="movies and music">
+            <h3>movies and music</h3>
+            <div class="list">
+              <label>
+                <input type="checkbox" name="hobbies" value="drama" />
+                <div class="container">
+                  <div><iconify-icon icon="mdi:drama-masks"></iconify-icon></div>
+                  <div class="title">drama</div>
                 </div>
-            </div>
-            <div class="sport">
-              <h3>sports</h3>
-                <div  class="list">
-                    <label >
-                        <input type="checkbox" name="hobbies" value="football" />
-                        <div class="container">
-                          <div><iconify-icon icon="ri:football-fill"></iconify-icon></div>
-                        <div class="title">football</div>
-                        </div>
-                        
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="basketball" />
-                        <div class="container">
-                          <div><iconify-icon class="icon" icon="game-icons:basketball-basket" ></iconify-icon></div>
-                          <div class="title">basketball</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="skating" />
-                        <div class="container">
-                          <div><iconify-icon icon="ic:round-roller-skating"></iconify-icon></div>
-                          <div class="title">skating</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="running" />
-                        <div class="container">
-                          <div><iconify-icon icon="twemoji:man-running-medium-dark-skin-tone"></iconify-icon></div>
-                          <div class="title">running</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="swimming" />
-                        <div class="container">
-                          <div><iconify-icon icon="fa6-solid:person-swimming"></iconify-icon></div>
-                          <div class="title">swimming</div>
-                        </div>
-                      </label>    
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="horror" />
+                <div class="container">
+                  <div><iconify-icon icon="emojione-monotone:face-screaming-in-fear"></iconify-icon></div>
+                  <div class="title">horror</div>
                 </div>
-            </div>
-            <div class="creative">
-              <h3>creative</h3>
-                <div class="list">
-                    <label>
-                        <input type="checkbox" name="hobbies" value="drawing" />
-                        <div class="container">
-                          <div><iconify-icon icon="ic:round-color-lens" width="40" height="40"></iconify-icon></div>
-                          <div class="title">drawing</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="dancing" />
-                        <div class="container">
-                          <div><iconify-icon icon="mdi:human-female-dance"></iconify-icon></div>
-                          <div class="title">dancing</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="singing" />
-                        <div class="container">
-                          <div><iconify-icon icon="material-symbols:mic"></iconify-icon></div>
-                          <div class="title">singing</div>
-                        </div>
-                      </label>
-                      <label>
-                        <input type="checkbox" name="hobbies" value="photography" />
-                        <div class="container">
-                          <div><iconify-icon icon="mdi:photography"></iconify-icon></div>
-                          <div class="title">photography</div>
-                        </div>
-                      </label>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="romance" />
+                <div class="container">
+                  <div><iconify-icon icon="icon-park-outline:oval-love-two"></iconify-icon></div>
+                  <div class="title">romance</div>
                 </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="comedy" />
+                <div class="container">
+                  <div><iconify-icon icon="fluent:emoji-laugh-24-regular"></iconify-icon></div>
+                  <div class="title">comedy</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="pop-music" />
+                <div class="container">
+                  <div><iconify-icon icon="noto-v1:guitar"></iconify-icon></div>
+                  <div class="title">pop-music</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="country-music" />
+                <div class="container">
+                  <div><iconify-icon icon="material-symbols:music-video-rounded"></iconify-icon></div>
+                  <div class="title">country-music</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="rock n roll" />
+                <div class="container">
+                  <div><iconify-icon icon="mingcute:finger-rock-line"></iconify-icon></div>
+                  <div class="title">rock n roll</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="jazz" />
+                <div class="container">
+                  <div><iconify-icon icon="noto:trumpet"></iconify-icon></div>
+                  <div class="title">jazz</div>
+                </div>
+              </label>
             </div>
+          </div>
+          <div class="sport">
+            <h3>sports</h3>
+            <div class="list">
+              <label>
+                <input type="checkbox" name="hobbies" value="football" />
+                <div class="container">
+                  <div><iconify-icon icon="ri:football-fill"></iconify-icon></div>
+                  <div class="title">football</div>
+                </div>
+
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="basketball" />
+                <div class="container">
+                  <div><iconify-icon class="icon" icon="game-icons:basketball-basket"></iconify-icon></div>
+                  <div class="title">basketball</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="skating" />
+                <div class="container">
+                  <div><iconify-icon icon="ic:round-roller-skating"></iconify-icon></div>
+                  <div class="title">skating</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="running" />
+                <div class="container">
+                  <div><iconify-icon icon="twemoji:man-running-medium-dark-skin-tone"></iconify-icon></div>
+                  <div class="title">running</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="swimming" />
+                <div class="container">
+                  <div><iconify-icon icon="fa6-solid:person-swimming"></iconify-icon></div>
+                  <div class="title">swimming</div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="creative">
+            <h3>creative</h3>
+            <div class="list">
+              <label>
+                <input type="checkbox" name="hobbies" value="drawing" />
+                <div class="container">
+                  <div><iconify-icon icon="ic:round-color-lens" width="40" height="40"></iconify-icon></div>
+                  <div class="title">drawing</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="dancing" />
+                <div class="container">
+                  <div><iconify-icon icon="mdi:human-female-dance"></iconify-icon></div>
+                  <div class="title">dancing</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="singing" />
+                <div class="container">
+                  <div><iconify-icon icon="material-symbols:mic"></iconify-icon></div>
+                  <div class="title">singing</div>
+                </div>
+              </label>
+              <label>
+                <input type="checkbox" name="hobbies" value="photography" />
+                <div class="container">
+                  <div><iconify-icon icon="mdi:photography"></iconify-icon></div>
+                  <div class="title">photography</div>
+                </div>
+              </label>
+            </div>
+          </div>
         </div>
-        
+
         <div class="radio">
           <p>Your Education Level</p>
 
@@ -790,13 +778,7 @@
             <span></span>
           </label>
           <label>
-            <input
-              type="radio"
-              name="educationLevel"
-              value=""
-              required
-              checked
-            />
+            <input type="radio" name="educationLevel" value="" required checked />
             None
             <span></span>
           </label>
@@ -805,64 +787,33 @@
           <p>My partner should not be educated below..</p>
 
           <label>
-            <input
-              type="radio"
-              name="preferredEducationLevel"
-              value="10"
-              required
-            />
+            <input type="radio" name="preferredEducationLevel" value="10" required />
             MiddleSchool
             <span></span>
           </label>
 
           <label>
-            <input
-              type="radio"
-              name="preferredEducationLevel"
-              value="20"
-              required
-            />
+            <input type="radio" name="preferredEducationLevel" value="20" required />
             HighSchool
             <span></span>
           </label>
           <label>
-            <input
-              type="radio"
-              name="preferredEducationLevel"
-              value="30"
-              required
-            />
+            <input type="radio" name="preferredEducationLevel" value="30" required />
             University/College
             <span></span>
           </label>
           <label>
-            <input
-              type="radio"
-              name="preferredEducationLevel"
-              value="40"
-              required
-            />
+            <input type="radio" name="preferredEducationLevel" value="40" required />
             Masters
             <span></span>
           </label>
           <label>
-            <input
-              type="radio"
-              name="preferredEducationLevel"
-              value="50"
-              required
-            />
+            <input type="radio" name="preferredEducationLevel" value="50" required />
             Professor
             <span></span>
           </label>
           <label>
-            <input
-              type="radio"
-              name="preferredEducationLevel"
-              value=""
-              required
-              checked
-            />
+            <input type="radio" name="preferredEducationLevel" value="" required checked />
             I don't mind
             <span></span>
           </label>
@@ -884,47 +835,49 @@
       </fieldset>
       <button class="signing-up">SIGN UP</button>
     </form>
-  </body>
+  </main>
+</body>
 
-  <script src="/save-location-if-possible.js"></script>
+<script src="/save-location-if-possible.js"></script>
 
-  <script>
-    const editForm = document.getElementById("edit-form");
-    const NEXT_URL = "/login.html"; //EDIT THIS IF CHANGED
-    const allowLocationCheckBox = document.getElementById(
-      "allow-location-check-box"
-    );
+<script>
+  const editForm = document.getElementById("edit-form");
+  const NEXT_URL = "/login.html"; //EDIT THIS IF CHANGED
+  const allowLocationCheckBox = document.getElementById(
+    "allow-location-check-box"
+  );
 
-    editForm.onsubmit = async function (event) {
-      event.preventDefault();
-      const formData = new FormData(editForm);
-      await saveLocationIfPossible(formData, allowLocationCheckBox);
+  editForm.onsubmit = async function (event) {
+    event.preventDefault();
+    const formData = new FormData(editForm);
+    await saveLocationIfPossible(formData, allowLocationCheckBox);
 
-      console.log(...formData);
-      const result = await fetch("/api/users", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await result.json();
-      if (data.code === 11000) {
-        alert("email already used");
-      } else {
-        window.location = NEXT_URL;
-      }
-      console.log(data);
-    };
-    function preview_image(event){
-      document.getElementById('output_image').style.display='block';
-      var reader = new FileReader();
-      reader.onload = function(){
+    console.log(...formData);
+    const result = await fetch("/api/users", {
+      method: "POST",
+      body: formData,
+    });
+    const data = await result.json();
+    if (data.code === 11000) {
+      alert("email already used");
+    } else {
+      window.location = NEXT_URL;
+    }
+    console.log(data);
+  };
+  function preview_image(event) {
+    document.getElementById('output_image').style.display = 'block';
+    var reader = new FileReader();
+    reader.onload = function () {
       var output = document.getElementById('output_image');
       output.src = reader.result;
-      document.getElementById('output_image').style.width='200px';
-      document.getElementById('output_image').style.height='40vh';
-      document.getElementById('output_image').style.borderRadius='30px';
-      document.getElementById('label').style.display='none';
-  }
-  reader.readAsDataURL(event.target.files[0]);
+      document.getElementById('output_image').style.width = '200px';
+      document.getElementById('output_image').style.height = '40vh';
+      document.getElementById('output_image').style.borderRadius = '30px';
+      document.getElementById('label').style.display = 'none';
+    }
+    reader.readAsDataURL(event.target.files[0]);
   };
-  </script>
+</script>
+
 </html>
