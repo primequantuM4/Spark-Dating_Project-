@@ -47,11 +47,15 @@
 
   .alert {
     padding: 20px;
-    background-image: linear-gradient(to right bottom, #2196f3, rgb(13, 112, 148));
-    width: 25%;
+    background-image: linear-gradient(to right bottom, #2195f362, rgb(13, 112, 148));
+    width: 100%;
     color: white;
     border-radius: 20px;
-    margin: 1% 5%;
+    margin: 0;
+  }
+
+  .alert_content {
+    text-align: center;
   }
 
   .closebtn {
@@ -349,6 +353,13 @@
 
   }
 
+  .loginQue {
+    width: 100%;
+    background-color: rgb(2, 19, 34);
+    text-align: center;
+    padding: 20px 0px;
+  }
+
   @media only screen and (min-width: 800px) {
 
     .basic-info,
@@ -360,11 +371,16 @@
 
 <body>
   <main>
-    <nav>
+    <!-- <nav>
       <a href="/home.html">home</a>
       <a href="/sign-up.html">signup</a>
       <a href="/login.html">login</a>
-    </nav>
+    </nav> -->
+    <div class="container-fluid w-100 mx-auto loginQue">
+      <span class="closebtn" style="margin: 0px 30px;" onclick="this.parentElement.style.display='none';">&times;
+      </span>
+      Already have an account? <a href="login.html">Login</a>
+    </div>
     <header>
       <h1>Fill out profile</h1>
       <!-- <p>
@@ -375,9 +391,12 @@
     </header>
     <div class="alert">
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <strong>One more step before you enjoy Spark!</strong>
-      <br />
-      We need this to give you good partner suggestions.
+      <div class="alert_content">
+        <strong>One more step before you enjoy Spark!</strong>
+        <br />
+        We need this to give you good partner suggestions.
+
+      </div>
 
     </div>
 

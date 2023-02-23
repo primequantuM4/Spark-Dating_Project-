@@ -10,23 +10,22 @@
   <title>Chats</title>
   <style>
     .card {
-      border-radius: 3rem;
+      color: aliceblue;
+      border-radius: 1rem;
       border: 2px solid pink;
       margin: 15px auto;
-      background: #333;
-
+      background: #280b1b9c;
     }
 
     img {
-      border-radius: 2rem;
-      width: 260px;
+      border-radius: inherit;
+      width: 200px;
       height: 200px;
-      margin: 4px;
       object-fit: cover;
     }
 
     body {
-      background-color: black;
+      background-color: #140909;
     }
 
     .unread {
@@ -47,6 +46,11 @@
 
     #chat-cards {
       margin-top: 60px;
+    }
+
+    .btn-success {
+      background: #ff469d;
+      text-shadow: 1px 1px 4px black;
     }
   </style>
 </head>
@@ -97,7 +101,7 @@
       const { unreadCount, chatId } = chatInfo;
 
       this.div.innerHTML = `
-            <div class="card text-white bg-dark mb-3 w-75 d-flex flex-row text-center align-items-start">
+            <div class="card mb-3 w-75 d-flex flex-row text-center align-items-center">
                 <img src="${photoUrl}"/>
                 <div class="card-body col-sm-8">
                 <h3 class="card-title m-2">${firstName} ${lastName}</h3>
@@ -108,7 +112,7 @@
                      ${unreadCount} Unread messages
                     </span>
                   </p>
-                <a class="btn btn-success link" href="chats/${chatId}"> chat now</a>
+                <a class="btn btn-success link py-1 mt-3" href="chats/${chatId}">Chat</a>
                 </div>
               </div>
             </div>
