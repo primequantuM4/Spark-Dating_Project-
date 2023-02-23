@@ -1,14 +1,14 @@
 class userCard {
   constructor({ id, firstName, lastName, age, religion, bio, photoUrl }) {
-    this.html = `<div class="user-card">
-        <div class="title">${firstName} ${lastName}</div>
-        <div class="user-card__img"><img src="${photoUrl}" alt=""></div>
-        <div class="user-card__location">Age ${age}</div>
-        <div class="user-card__religion">Religion: ${religion}</div>
-        <div class="user-card__hobbys">Bio: ${bio}</div>
-        <div>
-            <button id="likeButton">&#10084;</button>
-            <button id="hateButton">&#10005;</button>
+    this.html = `<div class="card bg-dark text-white d-flex flex-column p-3 justify-content-between">
+        <img class="card-img-top" src="${photoUrl}" alt="" width=260 height=200>
+        <div class="title mb-2">${firstName} ${lastName}</div>
+        <div class="user-card__location mb-1">Age ${age}</div>
+        <div class="user-card__religion mb-1">Religion: ${religion}</div>
+        <div class="user-card__hobbys mb-1">Bio: ${bio}</div>
+        <div class="mt-3 d-flex flex-row">
+            <button class="btn w-50 m-1" id="likeButton">&#10084;</button>
+            <button class="btn w-50 m-1" id="hateButton">&#10005;</button>
             </div>
             </div>`;
   }
