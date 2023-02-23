@@ -14,38 +14,41 @@
       #message-container {
         display: flex;
         flex-direction: column;
-        width: 50%;
         margin-top: 25%;
         margin-bottom: 10%;
-        position: relative;
-        right: 150px;
+        /* position: relative;
+        right: 150px; */
       }
       .mine {
-        background-color: #02628e;
-        /* background-image: linear-gradient(to right bottom, #05eb97, rgb(2, 245, 2)); */
+        /* background-color: #02628e; */
+        background-image: linear-gradient(to right bottom, #05eb97, rgb(2, 245, 2));
         color: white;
         align-self: end;
-        width: 75%;
-        padding: 10px;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        max-width: 50%;
+        overflow-wrap: break-word;
+        padding: 0 2%;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
         border-top-right-radius: 10px;
       }
 
       .mine,
       .other {
         margin: 5px 0;
-        box-shadow: 0 0 10px #333;
+        /* box-shadow: 0 0 10px #333; */
       }
 
       .other {
-        background-color: #efefef;
-        align-self: end;
-        width: 75%;
-        padding: 10px;
+        background-color: #7a7777;
+        color: white;
+        align-self: start;
+        /* margin-left: 20%; */
+        max-width: 50%;
+        overflow-wrap: break-word;
+        padding: 0% 2%;
         border-top-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border-top-right-radius: 10px;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
       }
 
       #profile-pic {
@@ -113,11 +116,13 @@
       <img id="profile-pic" src="" alt="profilepic" />
       </div>
       <div class="text-info">
-        <p id="name-slot">--name--</p>
+        <p id="name-slot">--Name--</p>
       </div>
       <div></div>
     </div>
-    <div id="message-container"></div>
+    <div class="leftandright">
+      <div id="message-container"></div>
+    </div>
     <div>
       <input id="message-input" type="text" placeholder="Write a message..." />
     </div>

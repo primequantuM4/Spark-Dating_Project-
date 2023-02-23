@@ -1,6 +1,6 @@
 class userCard {
   constructor({ id, firstName, lastName, age, religion, bio, photoUrl }) {
-    this.html = `<div class="card d-flex flex-column p-3 justify-content-between align-items-center">
+    this.html = `<div class="card d-flex flex-column p-3 justify-content-between align-items-center rounded-5">
         <img class="card-img-top m-0" src="${photoUrl}" alt="" width=260 height=200>
         <div class="title mb-0 mt-5 py-0">${firstName} ${lastName}</div>
         <hr class="m-0 w-100">
